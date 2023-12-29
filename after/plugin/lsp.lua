@@ -11,10 +11,15 @@ require('mason-lspconfig').setup({
   -- Replace the language servers listed here 
   -- with the ones you want to install
   ensure_installed = {
-	  'tsserver', 
+	  'tsserver',
 	  'rust_analyzer',
 	  'eslint',
-	  'lua_ls'
+	  'lua_ls',
+	  'dockerls',
+	  'docker_compose_language_service',
+	  'powershell_es',
+	  'postgres_lsp',
+	  'tailwindcss'
   },
   handlers = {
     lsp_zero.default_setup,
