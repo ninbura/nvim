@@ -15,7 +15,7 @@ vim.opt.smartindent = true
 -- undotree
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = "%userprofile%/appdata/local/nvim/undodir"
+vim.opt.undodir = vim.fn.stdpath('data') .. '/undo'
 vim.opt.undofile = true
 
 -- searching
