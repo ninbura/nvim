@@ -42,8 +42,8 @@ My neovim configuration and how to utilize it.
         - `sudo mv nvim.appimage /usr/local/bin/nvim`
 3. Clone packer into the proper directory, see instructions [here](https://github.com/wbthomason/packer.nvim#quickstart).
 4. create and or navigate to the configuration directory
-    - **windows** - `cd ~/appdata/local`
-    - **linux** - `mkdir -p ~/.config && cd ~/.config`
+    - ### windows - `cd ~/appdata/local`
+    - ### linux - `mkdir -p ~/.config && cd ~/.config`
 5. git clone this repository and enter the new directory
     - ### https
         - `git clone https://github.com/ninbura/nvim`
