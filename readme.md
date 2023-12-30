@@ -2,13 +2,18 @@
 My neovim configuration and how to utilize it.
 
 # steps to utilize
-1. install llvm + clang
+1. install dependencies
     - **windows**
         - `winget install -i llvm.llvm`
-        - make sure to add llvm to your system path via the popup installer
+            - make sure to add llvm to your system path via the popup installer
+        - `winget install coreybutler.nvmforwindows`
     - **linux**
         - `sudo apt install llvm`
         - `sudo apt install clang`
+        - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
+        - `source ~/.bashrc`
+    - **both**
+        - `nvm install node`
 2. install neovim
     - **windows**
         - `winget install neovim.neovim`
