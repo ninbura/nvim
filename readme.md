@@ -15,9 +15,11 @@ source ~/.bashrc
         - `winget install llvm.llvm`
         - `winget install coreybutler.nvmforwindows`
         - ```powershell
-          if($($env:Path).ToLower() -notmatch "llvm\\bin") {
-              $currentPATH = ([Environment]::GetEnvironmentVariable("Path")).Split(";")
-              $newPATH = ($CurrentPATH + "C:\Program Files\LLVM\bin") -Join ";"
+          $currentPath = ([Environment]::GetEnvironmentVariable("Path"))
+          
+          if($currentPath.ToLower() -notmatch "llvm\\bin") {
+              $splitPath = $CurrentPath.Split(";")
+              $newPath = ($splitPath + "C:\Program Files\LLVM\bin") -Join ";"
               [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
               $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
           }
