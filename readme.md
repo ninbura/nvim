@@ -4,15 +4,14 @@ My neovim configuration and how to utilize it.
 # steps to utilize
 1. install dependencies
     - **windows**
-        - llvm 
-            - `winget install llvm.llvm`
-            - ```powershell
-              $currentPATH = ([Environment]::GetEnvironmentVariable("Path")).Split(";")
-              $newPATH = ($CurrentPATH + "C:\Program Files\LLVM\bin") -Join ";"
-              [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
-              $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-              ```
+        - `winget install llvm.llvm`
         - `winget install coreybutler.nvmforwindows`
+        - ```powershell
+          $currentPATH = ([Environment]::GetEnvironmentVariable("Path")).Split(";")
+          $newPATH = ($CurrentPATH + "C:\Program Files\LLVM\bin") -Join ";"
+          [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
+          $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+          ```
     - **linux**
         - `sudo apt install llvm`
         - `sudo apt install clang`
