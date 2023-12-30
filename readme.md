@@ -22,7 +22,6 @@ source ~/.bashrc
               $newPath = ($splitPath + "C:\Program Files\LLVM\bin") -Join ";"
               [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
               $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-              write-host "made it"
           }
           ```
     - **linux**
