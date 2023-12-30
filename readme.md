@@ -28,7 +28,8 @@ source ~/.bashrc
         - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
         - `source ~/.bashrc`
     - **both**
-        - `nvm install node`
+        - `nvm install latest`
+        - `nvm use latest`
 2. install neovim
     - **windows**
         - `winget install neovim.neovim`
