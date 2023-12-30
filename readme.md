@@ -1,7 +1,7 @@
 # neovim
 blah blah blah
 
-# steps to install
+# steps to utilize
 1. install neovim
     - **windows**
         - `winget install neovim.neovim`
