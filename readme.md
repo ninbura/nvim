@@ -4,8 +4,13 @@ My neovim configuration and how to utilize it.
 # steps to utilize
 1. install dependencies
     - **windows**
-        - `winget install -i llvm.llvm`
-            - make sure to add llvm to your system path via the popup installer
+        - llvm 
+            - `winget install -i llvm.llvm`
+            - ```powershell
+                  $CurrentPATH = ([Environment]::GetEnvironmentVariable("PATH")).Split(";")
+                  $NewPATH = ($CurrentPATH + "C:\Program Files\LLVM\bin") -Join ";"
+                  [Environment]::SetEnvironmentVariable("PATH", $NewPath, [EnvironmentVariableTarget]::Machine)
+              ```
         - `winget install coreybutler.nvmforwindows`
     - **linux**
         - `sudo apt install llvm`
