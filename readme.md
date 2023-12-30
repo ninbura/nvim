@@ -32,12 +32,12 @@ My neovim configuration and how to utilize it.
         - `nvm install latest`
         - `nvm use latest`
 2. install neovim
-    - **windows**
+    - ### windows
         - `winget install neovim.neovim`
         - ```powershell
           $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")`
           ```
-    - **linux**
+    - ### linux
         - install neovim via [these instructions](https://github.com/neovim/neovim/blob/master/INSTALL.md#linux)
         - `sudo mv nvim.appimage /usr/local/bin/nvim`
 3. Clone packer into the proper directory, see instructions [here](https://github.com/wbthomason/packer.nvim#quickstart).
