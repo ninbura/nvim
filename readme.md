@@ -21,7 +21,7 @@ blah blah blah
     - **windows**
         - `cd ~/appdata/local`
     - **linux**
-        - `mkdir ~/.config && cd ~/.config`
+        - `mkdir -p ~/.config && cd ~/.config`
 5. git clone this repository and enter the new directory
     - `git clone https://github.com/ninbura/nvim`
     - `cd nvim`
