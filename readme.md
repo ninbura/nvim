@@ -2,7 +2,7 @@
 blah blah blah
 
 # steps to utilize
-1. install llvm (clang)
+1. install llvm + clang
     - **windows**
         - `winget install -i llvm.llvm`
         - make sure to add llvm to your system path via the popup installer
