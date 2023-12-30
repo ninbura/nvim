@@ -23,11 +23,14 @@ blah blah blah
     - **linux**
         - `mkdir -p ~/.config && cd ~/.config`
 5. git clone this repository and enter the new directory
-    - `git clone https://github.com/ninbura/nvim`
+    - https
+        - `git clone https://github.com/ninbura/nvim`
+    - ssh
+        - `git clone git@github.com:ninbura/nvim.git`
     - `cd nvim`
-6. open neovim in said directory
+7. open neovim in said directory
     - `nvim .`
-7. ignore errors and run `:PackerSync`
-8. quit and re-enter
+8. ignore errors and run `:PackerSync`
+9. quit and re-enter
     - `:q`
     - `nvim .`
