@@ -7,29 +7,26 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  use ({ 'rose-pine/neovim', as = 'rose-pine' })
+  use ('nvim-treesitter/nvim-treesitter', { run =  ':TSUpdate' })
+  use ('nvim-treesitter/playground')
+  use 'nvim-lua/plenary.nvim'
+  use ('xiyaowong/transparent.nvim')
+  use ('mbbill/undotree')
+  use ('tpope/vim-fugitive')
+  use ('folke/neodev.nvim')
+  use ('jmederosalvarado/roslyn.nvim')
+
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.5',
     -- or                            , branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use ({ 'rose-pine/neovim', as = 'rose-pine' })
-  use ('nvim-treesitter/nvim-treesitter', { run =  ':TSUpdate' })
-  use ('nvim-treesitter/playground')
-  use 'nvim-lua/plenary.nvim'
   use {
     'ThePrimeagen/harpoon',
     branch = "harpoon2",
     requires = { { "nvim-lua/plenary.nvim" } }
-  }
-  use ('xiyaowong/transparent.nvim')
-  use ('mbbill/undotree')
-  use ('tpope/vim-fugitive')
-
-  use {
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
-    'neovim/nvim-lspconfig',
   }
 
   use {
@@ -37,8 +34,8 @@ return require('packer').startup(function(use)
     branch = 'v3.x',
     requires = {
       --- Uncomment these if you want to manage LSP servers from neovim
-      -- {'williamboman/mason.nvim'},
-      -- {'williamboman/mason-lspconfig.nvim'},
+      {'williamboman/mason.nvim'},
+      {'williamboman/mason-lspconfig.nvim'},
 
       -- LSP Support
       { 'neovim/nvim-lspconfig' },
@@ -48,8 +45,4 @@ return require('packer').startup(function(use)
       { 'L3MON4D3/LuaSnip' },
     }
   }
-
-  use ('jmederosalvarado/roslyn.nvim')
-
-  use ('folke/neodev.nvim')
 end)
