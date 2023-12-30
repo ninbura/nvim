@@ -1,14 +1,5 @@
 # ninbura/nvim
 My neovim configuration and how to utilize it.
-# sourcing udpated path environment variables
-## windows
-```powershell
-$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-```
-## linux
-```bash
-source ~/.bashrc
-```
 # steps to utilize
 1. install dependencies
     - **windows**
@@ -43,10 +34,12 @@ source ~/.bashrc
 2. install neovim
     - **windows**
         - `winget install neovim.neovim`
+        - ```powershell
+          $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")`
+          ```
     - **linux**
         - install neovim via [these instructions](https://github.com/neovim/neovim/blob/master/INSTALL.md#linux)
         - `sudo mv nvim.appimage /usr/local/bin/nvim`
-    - **both** - source `$path` as seen in [sourcing udpated path environment variables](#sourcing-udpated-path-environment-variables) section
 3. Clone packer into the proper directory, see instructions [here](https://github.com/wbthomason/packer.nvim#quickstart).
 4. create and or navigate to the configuration directory
     - **windows** - `cd ~/appdata/local`
