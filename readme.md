@@ -18,7 +18,7 @@ My neovim configuration and how to utilize it.
               $splitPath = $CurrentPath.Split(";")
               $newPath = ($splitPath + "C:\Program Files\LLVM\bin") -Join ";"
               [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
-              $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+              $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
           }
           ```
     - ### linux
@@ -35,7 +35,7 @@ My neovim configuration and how to utilize it.
     - ### windows
         - `winget install neovim.neovim`
         - ```powershell
-          $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")`
+          $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")`
           ```
     - ### linux
         - install neovim via [these instructions](https://github.com/neovim/neovim/blob/master/INSTALL.md#linux)
@@ -67,6 +67,6 @@ My neovim configuration and how to utilize it.
 - `rename-item nvim ninvim`
     - persist
         - `[System.Environment]::SetEnvironmentVariable('NVIM_APPNAME', 'ninvim', 'Machine')`
-        - `$env:NVIM_APPNAME = [System.Environment]::GetEnvironmentVariable("NVIM_APPNAME","Machine")`
+        - `$env:NVIM_APPNAME = [System.Environment]::GetEnvironmentVariable("NVIM_APPNAME", "Machine")`
     - ephemeral
         - `$env:NVIM_APPNAME = ninvim`
