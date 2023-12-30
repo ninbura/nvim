@@ -51,5 +51,4 @@ source ~/.bashrc
 6. open neovim in said directory
     - `nvim .`
 7. ignore errors and run `:PackerSync`
-8. quit 💃
-    - `:q!`
+8. quit 💃 - `:q!`
