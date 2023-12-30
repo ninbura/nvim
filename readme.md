@@ -28,6 +28,9 @@ blah blah blah
     - ssh
         - `git clone git@github.com:ninbura/nvim.git`
     - `cd nvim`
+    - if ssh clone
+        - `git config user.name "ninbura"`
+        - `git config user.email "gabriel@ninbura.com"`
 7. open neovim in said directory
     - `nvim .`
 8. ignore errors and run `:PackerSync`
