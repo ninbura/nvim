@@ -50,5 +50,7 @@ source ~/.bashrc
         - `git config user.email "gabriel@ninbura.com"`
 6. open neovim in said directory
     - `nvim .`
-7. ignore errors and run `:PackerSync`
-8. quit 💃 - `:q!`
+7. ignore errors and run the following vim command
+    - `:PackerSync`
+8. quit 💃
+    - `:q!`
