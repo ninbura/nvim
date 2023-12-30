@@ -13,7 +13,7 @@ source ~/.bashrc
 1. install dependencies
     - **windows**
         - visual studio
-            - with professional license - `winget install microsoft.visualstudio.2022.professional`
+            - with professional license - `winget install microsoft.visualstudio.2022.professional --override "--quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"`
             - wihout professional license - `winget install microsoft.visualstudio.2022.community`
         - `winget install llvm.llvm`
         - `winget install coreybutler.nvmforwindows`
