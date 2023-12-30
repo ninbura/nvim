@@ -50,4 +50,6 @@ return require('packer').startup(function(use)
   }
 
   use ('jmederosalvarado/roslyn.nvim')
+
+  use ('folke/neodev.nvim')
 end)
