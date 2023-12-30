@@ -1,4 +1,4 @@
-# neovim
+# ninbura/nvim
 My neovim configuration and how to utilize it.
 
 # steps to utilize
