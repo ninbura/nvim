@@ -10,6 +10,7 @@ My neovim configuration and how to utilize it.
     - **linux**
         - `sudo apt install llvm`
         - `sudo apt install clang`
+        - `sudo apt install zip`
         - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
         - `source ~/.bashrc`
     - **both**
