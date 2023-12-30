@@ -36,8 +36,7 @@ source ~/.bashrc
     - **linux**
         - install neovim via [these instructions](https://github.com/neovim/neovim/blob/master/INSTALL.md#linux)
         - `sudo mv nvim.appimage /usr/local/bin/nvim`
-    - **both**
-        - source $path as seen in [sourcing udpated path environment variables](#sourcing-udpated-path-environment-variables) section
+    - **both** - source `$path` as seen in [sourcing udpated path environment variables](#sourcing-udpated-path-environment-variables) section
 3. Clone packer into the proper directory, see instructions [here](https://github.com/wbthomason/packer.nvim#quickstart).
 4. create and or navigate to the configuration directory
     - **windows** - `cd ~/appdata/local`
@@ -53,3 +52,4 @@ source ~/.bashrc
     - `nvim .`
 7. ignore errors and run `:PackerSync`
 8. quit 💃
+    - `:q!`
