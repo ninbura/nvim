@@ -62,7 +62,7 @@ My neovim configuration and how to utilize it.
 8. quit 💃
     - `:q!`
 # setting up as additional configuration
-## windows
+### windows
 - `cd ~/appdata/local`
 - `rename-item nvim ninvim`
 - `[System.Environment]::SetEnvironmentVariable('NVIM_APPNAME','ninvim', 'Machine')`
