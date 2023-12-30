@@ -11,6 +11,7 @@ My neovim configuration and how to utilize it.
         - `sudo apt install llvm`
         - `sudo apt install clang`
         - `sudo apt install zip`
+        - `sudo apt install fuse`
         - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
         - `source ~/.bashrc`
     - **both**
@@ -19,7 +20,6 @@ My neovim configuration and how to utilize it.
     - **windows**
         - `winget install neovim.neovim`
     - **linux**
-        - `sudo apt install fuse`
         - install neovim via [these instructions](https://github.com/neovim/neovim/blob/master/INSTALL.md#linux)
         - `sudo mv nvim.appimage /usr/local/bin/nvim`
 3. Clone packer into the proper directory, see instructions [here](https://github.com/wbthomason/packer.nvim#quickstart).
