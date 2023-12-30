@@ -18,7 +18,7 @@ source ~/.bashrc
           # without professional license
           winget install microsoft.visualstudio.2022.community --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"`
           ```
-        - ```winget install llvm.llvm```
+        - `winget install llvm.llvm`
         - `winget install coreybutler.nvmforwindows`
         - ```powershell
           $currentPath = ([Environment]::GetEnvironmentVariable("Path"))
