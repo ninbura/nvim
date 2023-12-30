@@ -8,9 +8,9 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.5',
-	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+    'nvim-telescope/telescope.nvim', tag = '0.1.5',
+    -- or                            , branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
   }
 
   use ({ 'rose-pine/neovim', as = 'rose-pine' }) 
@@ -18,14 +18,14 @@ return require('packer').startup(function(use)
   use ('nvim-treesitter/playground')
   use 'nvim-lua/plenary.nvim'
   use {
-  	'ThePrimeagen/harpoon',
-	branch = "harpoon2",
-	requires = { { "nvim-lua/plenary.nvim" } }
+    'ThePrimeagen/harpoon',
+    branch = "harpoon2",
+    requires = { { "nvim-lua/plenary.nvim" } }
   }
   use ('xiyaowong/transparent.nvim')
   use ('mbbill/undotree')
   use ('tpope/vim-fugitive')
-  
+
   use {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
@@ -48,4 +48,6 @@ return require('packer').startup(function(use)
       { 'L3MON4D3/LuaSnip' },
     }
   }
+
+  use ('jmederosalvarado/roslyn.nvim')
 end)
