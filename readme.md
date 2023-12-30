@@ -2,7 +2,7 @@
 blah blah blah
 
 # steps to install
-1. clone packer into the proper directory, see instructions [here](https://github.com/wbthomason/packer.nvim#quickstart).
+1. Clone packer into the proper directory, see instructions [here](https://github.com/wbthomason/packer.nvim#quickstart).
 2. create and or navigate to the configuration directory
     - **windows**
         - `cd ~/appdata/local`
