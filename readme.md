@@ -7,7 +7,8 @@ blah blah blah
         - `winget install neovim.neovim`
     - **linux**
         - `sudo apt install fuse`
-        - install neovim via [these instructions](https://github.com/neovim/neovim/blob/master/INSTALL.md#linux)
+        - `mkdir ~/neovim && cd ~/neovim`
+        - install neovim in the `~/neovim` directory (you should be in it) via [these instructions](https://github.com/neovim/neovim/blob/master/INSTALL.md#linux)
 2. Clone packer into the proper directory, see instructions [here](https://github.com/wbthomason/packer.nvim#quickstart).
 3. create and or navigate to the configuration directory
     - **windows**
