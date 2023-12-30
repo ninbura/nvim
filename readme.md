@@ -1,6 +1,14 @@
 # ninbura/nvim
 My neovim configuration and how to utilize it.
-
+# sourcing udpated path environment variables
+## windows
+```powershell
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+```
+## linux
+```bash
+`source ~/.bashrc`
+```
 # steps to utilize
 1. install dependencies
     - **windows**
