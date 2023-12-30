@@ -8,7 +8,11 @@ lsp_zero.on_attach(function(client, bufnr)
   lsp_zero.default_keymaps({buffer = bufnr})
 end)
 
-require('mason').setup()
+require('mason').setup {
+  -- log_level = vim.log.levels.DEBUG
+  log_level = vim.log.levels.INFO
+}
+
 require('mason-lspconfig').setup({
   -- Replace the language servers listed here 
   -- with the ones you want to install
@@ -20,7 +24,7 @@ require('mason-lspconfig').setup({
 	  'dockerls',
 	  'docker_compose_language_service',
 	  'powershell_es',
-	  'postgres_lsp',
+	  'sqlls',
 	  'tailwindcss'
   },
   handlers = {
