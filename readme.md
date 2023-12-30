@@ -7,7 +7,7 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";"
 ```
 ## linux
 ```bash
-`source ~/.bashrc`
+source ~/.bashrc
 ```
 # steps to utilize
 1. install dependencies
