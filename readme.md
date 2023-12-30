@@ -8,6 +8,7 @@ blah blah blah
         - make sure to add llvm to your system path via the popup installer
     - **linux**
         - `sudo apt install llvm`
+        - `sudo apt install clang`
 2. install neovim
     - **windows**
         - `winget install neovim.neovim`
