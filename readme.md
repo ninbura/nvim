@@ -23,10 +23,8 @@ blah blah blah
     - **linux**
         - `mkdir -p ~/.config && cd ~/.config`
 5. git clone this repository and enter the new directory
-    - https
-        - `git clone https://github.com/ninbura/nvim`
-    - ssh
-        - `git clone git@github.com:ninbura/nvim.git`
+    - https - `git clone https://github.com/ninbura/nvim`
+    - ssh - `git clone git@github.com:ninbura/nvim.git`
     - `cd nvim`
     - if ssh clone
         - `git config user.name "ninbura"`
