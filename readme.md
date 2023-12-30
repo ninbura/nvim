@@ -27,9 +27,7 @@ blah blah blah
     - if ssh clone
         - `git config user.name "ninbura"`
         - `git config user.email "gabriel@ninbura.com"`
-7. open neovim in said directory
+6. open neovim in said directory
     - `nvim .`
-8. ignore errors and run `:PackerSync`
-9. quit and re-enter
-    - `:q`
-    - `nvim .`
+7. ignore errors and run `:PackerSync`
+8. quit 💃
