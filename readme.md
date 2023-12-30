@@ -45,12 +45,13 @@ My neovim configuration and how to utilize it.
     - **windows** - `cd ~/appdata/local`
     - **linux** - `mkdir -p ~/.config && cd ~/.config`
 5. git clone this repository and enter the new directory
-    - https - `git clone https://github.com/ninbura/nvim`
-    - ssh - `git clone git@github.com:ninbura/nvim.git`
-    - `cd nvim`
-    - if ssh clone
+    - ### https
+        - `git clone https://github.com/ninbura/nvim`
+    - ### ssh
+        - `git clone git@github.com:ninbura/nvim.git`
         - `git config user.name "ninbura"`
         - `git config user.email "gabriel@ninbura.com"`
+    - `cd nvim`
 6. open neovim in said directory
     - `nvim .`
 7. ignore errors and run the following vim command
