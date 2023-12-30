@@ -1,5 +1,5 @@
 # neovim
-blah blah blah
+My neovim configuration and how to utilize it.
 
 # steps to utilize
 1. install llvm + clang
