@@ -40,7 +40,7 @@ My neovim configuration and how to utilize it.
     - ### linux
         - install neovim via [these instructions](https://github.com/neovim/neovim/blob/master/INSTALL.md#linux)
         - `sudo mv nvim.appimage /usr/local/bin/nvim`
-3. Clone packer into the proper directory, see instructions [here](https://github.com/wbthomason/packer.nvim#quickstart).
+3. Clone **packer** into the proper directory, see instructions [here](https://github.com/wbthomason/packer.nvim#quickstart).
 4. create and or navigate to the configuration directory
     - ### windows
         - `cd ~/appdata/local`
