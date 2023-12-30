@@ -4,9 +4,9 @@ blah blah blah
 # steps to install
 1. clone packer into the proper directory, see instructions [here](https://github.com/wbthomason/packer.nvim#quickstart)
 2. create and or navigate to the configuration directory
-  - **windows**
+    - **windows**
     - `cd ~/appdata/local`
-  - **linux**
+    - **linux**
     - `mkdir ~/.config && cd ~/.config`
 3. git clone this repository and enter the new directory
   - `git clone https://github.com/ninbura/nvim`
