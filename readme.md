@@ -5,7 +5,7 @@ My neovim configuration and how to utilize it.
 1. install dependencies
     - **windows**
         - llvm 
-            - `winget install -i llvm.llvm`
+            - `winget install llvm.llvm`
             - ```powershell
               $currentPATH = ([Environment]::GetEnvironmentVariable("Path")).Split(";")
               $newPATH = ($CurrentPATH + "C:\Program Files\LLVM\bin") -Join ";"
