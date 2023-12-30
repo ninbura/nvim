@@ -28,7 +28,7 @@ My neovim configuration and how to utilize it.
         - `sudo apt install fuse`
         - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
         - `source ~/.bashrc`
-    - ## both
+    - ### both
         - `nvm install latest`
         - `nvm use latest`
 2. install neovim
