@@ -65,4 +65,5 @@ My neovim configuration and how to utilize it.
 ### windows
 - `cd ~/appdata/local`
 - `rename-item nvim ninvim`
-- `[System.Environment]::SetEnvironmentVariable('NVIM_APPNAME', 'ninvim', 'Machine')`
+- `[System.Environment]::SetEnvironmentVariable('nvim_appname', 'ninvim', 'Machine')`
+- `$env:nvim_appname = [System.Environment]::GetEnvironmentVariable("nvim_appname","Machine")`
