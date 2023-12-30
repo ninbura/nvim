@@ -10,6 +10,7 @@ My neovim configuration and how to utilize it.
               $currentPATH = ([Environment]::GetEnvironmentVariable("PATH")).Split(";")
               $newPATH = ($CurrentPATH + "C:\Program Files\LLVM\bin") -Join ";"
               [Environment]::SetEnvironmentVariable("PATH", $newPath, [EnvironmentVariableTarget]::Machine)
+              $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
               ```
         - `winget install coreybutler.nvmforwindows`
     - **linux**
