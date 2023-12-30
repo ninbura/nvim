@@ -33,7 +33,7 @@ vim.keymap.set("n", "<leader><leader>", function() -- source currently opened fi
     vim.cmd("so")
 end)
 
-vim.keymap.set("n", "<leader>ps", "<cmd>e %homepath%/appdata/local/nvim/lua/ninbura/packer.lua<CR>");
+-- vim.keymap.set("n", "<leader>ps", "<cmd>e %homepath%/appdata/local/nvim/lua/ninbura/packer.lua<CR>"); -- Busted, not sure exactly what it does.
 
 
 -- visual mode
