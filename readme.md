@@ -11,6 +11,7 @@ My neovim configuration and how to utilize it.
           ```
         - `winget install llvm.llvm`
         - `winget install coreybutler.nvmforwindows`
+        - `winget install burntsushi.ripgrep.gnu`
         - ```powershell
           $currentPath = ([Environment]::GetEnvironmentVariable("Path"))
           
@@ -26,6 +27,7 @@ My neovim configuration and how to utilize it.
         - `sudo apt install clang`
         - `sudo apt install zip`
         - `sudo apt install fuse`
+        - `sudo apt install ripgrep`
         - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
         - `source ~/.bashrc`
     - ### both
