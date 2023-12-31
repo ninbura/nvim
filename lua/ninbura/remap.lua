@@ -40,7 +40,7 @@ end)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- move selected lines up
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- move selected lines down
 
-vim.keymap.set("v", "<leader>y", [["+yp]]) -- copy selection into system clipboard
+vim.keymap.set("v", "<leader>y", [["+y]]) -- copy selection into system clipboard
 
 vim.keymap.set("v", "<leader>d", [["_d]]) -- delete to void register
 
