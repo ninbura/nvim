@@ -35,7 +35,7 @@ My neovim configuration and how to utilize it.
     - ### windows
         - `winget install neovim.neovim`
         - ```powershell
-          $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")`
+          $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
           ```
     - ### linux
         - install neovim via [these instructions](https://github.com/neovim/neovim/blob/master/INSTALL.md#linux)
