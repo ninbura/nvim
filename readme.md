@@ -63,17 +63,17 @@ My neovim configuration and how to utilize it.
     - `:q!`
 # setting up as additional configuration
 ### windows
-- rename nvim directory
+1. rename nvim directory
     - `rename-item -path ~/appdata/local/nvim -newname ninvim`
-- create `APP_NAME` environment variable
+2. create `APP_NAME` environment variable
     - persist
         - `[System.Environment]::SetEnvironmentVariable('NVIM_APPNAME', 'ninvim', 'Machine')`
         - `$env:NVIM_APPNAME = [System.Environment]::GetEnvironmentVariable("NVIM_APPNAME", "Machine")`
     - ephemeral
         - `$env:NVIM_APPNAME = ninvim`
-- clone packer into new data folder
+3. clone packer into new data folder
     - `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\ninvim-data\site\pack\packer\start\packer.nvim"`
-- open configuration, packer sync & quit
+4. open configuration, packer sync & quit
     - `nvim ~/appdata/local/ninvim`
     - ignore errors & run `:PackerSync`
     - `:q`
