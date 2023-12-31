@@ -73,7 +73,7 @@ My neovim configuration and how to utilize it.
         - `$env:NVIM_APPNAME = ninvim`
 3. clone packer into new data folder
     - `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\ninvim-data\site\pack\packer\start\packer.nvim"`
-4. open configuration, packer sync & quit
+4. open configuration, run packersync, & quit
     - `nvim ~/appdata/local/ninvim`
     - ignore errors & run `:PackerSync`
     - `:q`
