@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
   use ('tpope/vim-fugitive')
   use ('folke/neodev.nvim')
   use ('jmederosalvarado/roslyn.nvim')
+  use ('ojroques/nvim-osc52')
 
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.5',
