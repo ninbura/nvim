@@ -42,13 +42,12 @@ My neovim configuration and how to utilize it.
     - ### linux
         - install neovim via [these instructions](https://github.com/neovim/neovim/blob/master/INSTALL.md#linux)
         - `sudo mv nvim.appimage /usr/local/bin/nvim`
-3. Clone **packer** into the proper directory, see instructions [here](https://github.com/wbthomason/packer.nvim#quickstart).
-4. create and or navigate to the configuration directory
+3. create and or navigate to the configuration directory
     - ### windows
         - `cd ~/appdata/local`
     - ### linux
         - `mkdir -p ~/.config && cd ~/.config`
-5. git clone this repository and enter the new directory
+4. git clone this repository and enter the new directory
     - ### https
         - `git clone https://github.com/ninbura/nvim`
     - ### ssh
@@ -57,12 +56,11 @@ My neovim configuration and how to utilize it.
         - `git config user.email "gabriel@ninbura.com"`
     - ### both
         - `cd nvim`
-6. open neovim in said directory
+5. open neovim in said directory
     - `nvim .`
-7. ignore errors and run the following vim command
-    - `:PackerSync`
+7. wait for lazy to install plugins
 8. quit 💃
-    - `:q!`
+    - `:q` (may have to do this twice because of lazy window)
 # setting up as additional configuration
 ### windows
 1. rename nvim directory
@@ -73,11 +71,7 @@ My neovim configuration and how to utilize it.
         - `$env:NVIM_APPNAME = [System.Environment]::GetEnvironmentVariable("NVIM_APPNAME", "Machine")`
     - ephemeral
         - `$env:NVIM_APPNAME = ninvim`
-3. clone packer into new data folder
-    - ```powershell
-      git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\ninvim-data\site\pack\packer\start\packer.nvim"
-      ```
-4. open configuration, run packersync, & quit
+3. open configuration, wait for lazy, & quit
     - `nvim ~/appdata/local/ninvim`
-    - ignore errors & run `:PackerSync`
-    - `:q`
+    - wait for lazy to install plugins
+    - `:q` (may have to do this twice because of lazy window)
