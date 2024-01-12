@@ -4,6 +4,10 @@ My neovim configuration and how to utilize it.
 1. install dependencies
     - ### windows
         - ```powershell
+          # requires elevated shell
+          winget install jazzdelightsme.WingetPathUpdater
+          ``` 
+        - ```powershell
           # professional license (paid)
           winget install microsoft.visualstudio.2022.professional --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
           ```
@@ -12,8 +16,7 @@ My neovim configuration and how to utilize it.
           winget install microsoft.visualstudio.2022.community --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
           ```
         - ```powershell
-          # requires elevated terminal
-          winget install jazzdelightsme.WingetPathUpdater llvm.llvm coreybutler.nvmforwindows burntsushi.ripgrep.gnu --accept-package-agreements --accept-source-agreements
+          winget install llvm.llvm coreybutler.nvmforwindows burntsushi.ripgrep.gnu --accept-package-agreements --accept-source-agreements
           ```
 
         - ```powershell
@@ -59,7 +62,7 @@ My neovim configuration and how to utilize it.
         - ```bash
           mkdir -p ~/.config && cd ~/.config
           ```
-4. git clone this repository and enter the new directory
+4. git clone this repository
     - ### https
         - ```powershell
           git clone https://github.com/ninbura/nvim
@@ -83,7 +86,7 @@ My neovim configuration and how to utilize it.
       rename-item -path ~/appdata/local/nvim -newname ninvim
       ```
 3. create `APP_NAME` environment variable
-    - persist
+    - persistent
         - ```powershell
           [System.Environment]::SetEnvironmentVariable('NVIM_APPNAME', 'ninvim', 'Machine')
           $env:NVIM_APPNAME = [System.Environment]::GetEnvironmentVariable("NVIM_APPNAME", "Machine")
