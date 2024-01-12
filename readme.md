@@ -13,7 +13,7 @@ My neovim configuration and how to utilize it.
           ```
         - ```powershell
           # requires elevated terminal
-          winget install jazzdelightsme.WingetPathUpdater llvm.llvm coreybutler.nvmforwindows burntsushi.ripgrep.gnu
+          winget install jazzdelightsme.WingetPathUpdater llvm.llvm coreybutler.nvmforwindows burntsushi.ripgrep.gnu --accept-package-agreements --accept-source-agreements
           ```
 
         - ```powershell
@@ -27,11 +27,7 @@ My neovim configuration and how to utilize it.
           }
           ```
     - ### linux
-        - `sudo apt install llvm`
-        - `sudo apt install clang`
-        - `sudo apt install zip`
-        - `sudo apt install fuse`
-        - `sudo apt install ripgrep`
+        - `sudo apt install llvm clang zip fuse ripgrep -y`
         - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
         - `source ~/.bashrc`
     - ### both
