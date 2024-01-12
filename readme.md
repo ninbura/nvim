@@ -59,7 +59,7 @@ My neovim configuration and how to utilize it.
         - ```bash
           mkdir -p ~/.config && cd ~/.config
           ```
-4. git clone this repository and enter the new directory
+4. git clone this repository
     - ### https
         - ```powershell
           git clone https://github.com/ninbura/nvim
