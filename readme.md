@@ -4,7 +4,7 @@ My neovim configuration and how to utilize it.
 1. install dependencies
     - ### windows
         - ```
-          winget install jazzdelightsme.WingetPathUpdater
+          winget install jazzdelightsme.WingetPathUpdater # requires elevated terminal
           ```
         - ```powershell
           # professional license (paid)
