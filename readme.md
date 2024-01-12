@@ -69,3 +69,4 @@ My neovim configuration and how to utilize it.
     - `nvim`
     - wait for lazy to install plugins
     - `:q` (may have to do this twice because of lazy window)
+### linux 🚧
