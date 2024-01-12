@@ -21,7 +21,7 @@ My neovim configuration and how to utilize it.
           winget install coreybutler.nvmforwindows
           ```
         - ```powershell
-          winget install burntsushi.ripgrep.gnu`
+          winget install burntsushi.ripgrep.gnu
           ```
         - ```powershell
           $currentPath = ([Environment]::GetEnvironmentVariable("Path"))
