@@ -41,7 +41,9 @@ My neovim configuration and how to utilize it.
           ```
 2. install neovim nightly
     - ### windows
-        - `winget install neovim.neovim.nightly`
+        - ```powershell
+          winget install neovim.neovim.nightly
+          ```
     - ### linux
         - ```bash
           curl -LO https://github.com/neovim/neovim/releases/tag/nightly/download/nvim.appimage`
@@ -50,16 +52,24 @@ My neovim configuration and how to utilize it.
           ```
 3. create and or navigate to the configuration directory
     - ### windows
-        - `cd ~/appdata/local`
+        - ```powershell
+          cd ~/appdata/local
+          ```
     - ### linux
-        - `mkdir -p ~/.config && cd ~/.config`
+        - ```bash
+          mkdir -p ~/.config && cd ~/.config
+          ```
 4. git clone this repository and enter the new directory
     - ### https
-        - `git clone https://github.com/ninbura/nvim`
-    - ### ssh
-        - `git clone git@github.com:ninbura/nvim.git`
-        - `git config user.name "ninbura"`
-        - `git config user.email "gabriel@ninbura.com"`
+        - ```powershell
+          git clone https://github.com/ninbura/nvim
+          ```
+    - ### ssh (applicable to just me 😈)
+        - ```powershell
+          git clone git@github.com:ninbura/nvim.git
+          git config user.name "ninbura"
+          git config user.email "gabriel@ninbura.com"
+          ```
 5. open neovim, wait for lazy to install plugins, & quit
     - `nvim`
     - wait for lazy to install plugins
@@ -67,13 +77,19 @@ My neovim configuration and how to utilize it.
 # setting up as additional configuration
 ### windows
 1. rename nvim directory
-    - `rename-item -path ~/appdata/local/nvim -newname ninvim`
+    - ```powershell
+      rename-item -path ~/appdata/local/nvim -newname ninvim
+      ```
 2. create `APP_NAME` environment variable
     - persist
-        - `[System.Environment]::SetEnvironmentVariable('NVIM_APPNAME', 'ninvim', 'Machine')`
-        - `$env:NVIM_APPNAME = [System.Environment]::GetEnvironmentVariable("NVIM_APPNAME", "Machine")`
+        - ```powershell
+          [System.Environment]::SetEnvironmentVariable('NVIM_APPNAME', 'ninvim', 'Machine')
+          $env:NVIM_APPNAME = [System.Environment]::GetEnvironmentVariable("NVIM_APPNAME", "Machine")
+          ```
     - ephemeral
-        - `$env:NVIM_APPNAME = ninvim`
+        - ```powershell
+          $env:NVIM_APPNAME = ninvim
+          ```
 3. open neovim, wait for lazy to install plugins, & quit
     - `nvim`
     - wait for lazy to install plugins
