@@ -33,12 +33,9 @@ My neovim configuration and how to utilize it.
     - ### both
         - `nvm install latest`
         - `nvm use latest`
-2. install neovim
+2. install neovim nightly
     - ### windows
-        - `winget install neovim.neovim`
-        - ```powershell
-          $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
-          ```
+        - `winget install neovim.neovim.nightly`
     - ### linux
         - install neovim via [these instructions](https://github.com/neovim/neovim/blob/master/INSTALL.md#linux)
         - `sudo mv nvim.appimage /usr/local/bin/nvim`
@@ -54,12 +51,9 @@ My neovim configuration and how to utilize it.
         - `git clone git@github.com:ninbura/nvim.git`
         - `git config user.name "ninbura"`
         - `git config user.email "gabriel@ninbura.com"`
-    - ### both
-        - `cd nvim`
-5. open neovim in said directory
-    - `nvim .`
-7. wait for lazy to install plugins
-8. quit 💃
+5. open neovim, wait for lazy to install plugins, & quit
+    - `nvim`
+    - wait for lazy to install plugins
     - `:q` (may have to do this twice because of lazy window)
 # setting up as additional configuration
 ### windows
@@ -71,7 +65,7 @@ My neovim configuration and how to utilize it.
         - `$env:NVIM_APPNAME = [System.Environment]::GetEnvironmentVariable("NVIM_APPNAME", "Machine")`
     - ephemeral
         - `$env:NVIM_APPNAME = ninvim`
-3. open configuration, wait for lazy, & quit
-    - `nvim ~/appdata/local/ninvim`
+3. open neovim, wait for lazy to install plugins, & quit
+    - `nvim`
     - wait for lazy to install plugins
     - `:q` (may have to do this twice because of lazy window)
