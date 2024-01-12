@@ -3,7 +3,7 @@ My neovim configuration and how to utilize it.
 # steps to utilize
 1. install dependencies
     - ### windows
-        - ```
+        - ```powershell
           winget install jazzdelightsme.WingetPathUpdater # requires elevated terminal
           ```
         - ```powershell
@@ -14,9 +14,15 @@ My neovim configuration and how to utilize it.
           # community license (free)
           winget install microsoft.visualstudio.2022.community --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
           ```
-        - `winget install llvm.llvm`
-        - `winget install coreybutler.nvmforwindows`
-        - `winget install burntsushi.ripgrep.gnu`
+        - ```powershell
+          winget install llvm.llvm
+          ```
+        - ```powershell
+          winget install coreybutler.nvmforwindows
+          ```
+        - ```powershell
+          winget install burntsushi.ripgrep.gnu`
+          ```
         - ```powershell
           $currentPath = ([Environment]::GetEnvironmentVariable("Path"))
           
