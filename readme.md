@@ -1,17 +1,21 @@
-# ninbura/nvim
+# summary
 My neovim configuration and how to utilize it.
 # steps to utilize
 1. install dependencies
     - ### windows
         - ```powershell
-          # with professional license
+          # professional license (paid)
           winget install microsoft.visualstudio.2022.professional --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
-          # without professional license
+          ```
+        - ```powershell
+          # community license (free)
           winget install microsoft.visualstudio.2022.community --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
           ```
-        - `winget install llvm.llvm`
-        - `winget install coreybutler.nvmforwindows`
-        - `winget install burntsushi.ripgrep.gnu`
+        - ```powershell
+          # requires elevated terminal
+          winget install jazzdelightsme.WingetPathUpdater llvm.llvm coreybutler.nvmforwindows burntsushi.ripgrep.gnu --accept-package-agreements --accept-source-agreements
+          ```
+
         - ```powershell
           $currentPath = ([Environment]::GetEnvironmentVariable("Path"))
           
@@ -23,61 +27,72 @@ My neovim configuration and how to utilize it.
           }
           ```
     - ### linux
-        - `sudo apt install llvm`
-        - `sudo apt install clang`
-        - `sudo apt install zip`
-        - `sudo apt install fuse`
-        - `sudo apt install ripgrep`
+        - ```bash
+          sudo apt install llvm clang zip fuse ripgrep -y
+          ```
         - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
-        - `source ~/.bashrc`
+        - ```bash
+          source ~/.bashrc
+          ```
     - ### both
-        - `nvm install latest`
-        - `nvm use latest`
-2. install neovim
-    - ### windows
-        - `winget install neovim.neovim`
         - ```powershell
-          $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+          nvm install latest
+          nvm use latest
+          ```
+2. install neovim nightly
+    - ### windows
+        - ```powershell
+          winget install neovim.neovim.nightly
           ```
     - ### linux
-        - install neovim via [these instructions](https://github.com/neovim/neovim/blob/master/INSTALL.md#linux)
-        - `sudo mv nvim.appimage /usr/local/bin/nvim`
-3. Clone **packer** into the proper directory, see instructions [here](https://github.com/wbthomason/packer.nvim#quickstart).
-4. create and or navigate to the configuration directory
+        - ```bash
+          curl -LO https://github.com/neovim/neovim/releases/tag/nightly/download/nvim.appimage`
+          chmod u+x nvim.appimage
+          sudo mv nvim.appimage /usr/local/bin/nvim
+          ```
+3. create and or navigate to the configuration directory
     - ### windows
-        - `cd ~/appdata/local`
+        - ```powershell
+          cd ~/appdata/local
+          ```
     - ### linux
-        - `mkdir -p ~/.config && cd ~/.config`
-5. git clone this repository and enter the new directory
+        - ```bash
+          mkdir -p ~/.config && cd ~/.config
+          ```
+4. git clone this repository and enter the new directory
     - ### https
-        - `git clone https://github.com/ninbura/nvim`
-    - ### ssh
-        - `git clone git@github.com:ninbura/nvim.git`
-        - `git config user.name "ninbura"`
-        - `git config user.email "gabriel@ninbura.com"`
-    - ### both
-        - `cd nvim`
-6. open neovim in said directory
-    - `nvim .`
-7. ignore errors and run the following vim command
-    - `:PackerSync`
-8. quit 💃
-    - `:q!`
+        - ```powershell
+          git clone https://github.com/ninbura/nvim
+          ```
+    - ### ssh (applicable to just me 😈)
+        - ```powershell
+          git clone git@github.com:ninbura/nvim.git
+          git config user.name "ninbura"
+          git config user.email "gabriel@ninbura.com"
+          ```
+5. open neovim, wait for lazy to install plugins, & quit
+    - `nvim`
+    - wait for lazy to install plugins
+    - `:q` (may have to do this twice because of lazy window)
 # setting up as additional configuration
 ### windows
-1. rename nvim directory
-    - `rename-item -path ~/appdata/local/nvim -newname ninvim`
-2. create `APP_NAME` environment variable
-    - persist
-        - `[System.Environment]::SetEnvironmentVariable('NVIM_APPNAME', 'ninvim', 'Machine')`
-        - `$env:NVIM_APPNAME = [System.Environment]::GetEnvironmentVariable("NVIM_APPNAME", "Machine")`
-    - ephemeral
-        - `$env:NVIM_APPNAME = ninvim`
-3. clone packer into new data folder
+1. rename nvim directory after cloning it
+    - If you have an existing nvim configuration folder; clone this repo into a different directory, rename the cloned directory, and then move the directory to `~/appdata/local`.
     - ```powershell
-      git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\ninvim-data\site\pack\packer\start\packer.nvim"
+      rename-item -path ~/appdata/local/nvim -newname ninvim
       ```
-4. open configuration, run packersync, & quit
-    - `nvim ~/appdata/local/ninvim`
-    - ignore errors & run `:PackerSync`
-    - `:q`
+3. create `APP_NAME` environment variable
+    - persist
+        - ```powershell
+          [System.Environment]::SetEnvironmentVariable('NVIM_APPNAME', 'ninvim', 'Machine')
+          $env:NVIM_APPNAME = [System.Environment]::GetEnvironmentVariable("NVIM_APPNAME", "Machine")
+          ```
+    - ephemeral
+        - ```powershell
+          $env:NVIM_APPNAME = ninvim
+          ```
+4. open neovim, wait for lazy to install plugins, & quit
+    - `nvim`
+    - wait for lazy to install plugins
+    - `:q` (may have to do this twice because of lazy window)
+### linux (under construction 🚧)
