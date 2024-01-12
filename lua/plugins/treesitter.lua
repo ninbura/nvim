@@ -5,7 +5,7 @@ return {
     local configs = require("nvim-treesitter.configs")
 
     configs.setup({
-      ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "typescript", "rust" },
+      ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "typescript", "rust", "markdown", "markdown_inline", "bash" },
       modules = {},
       ignore_install = {},
       parser_install_dir = nil,
