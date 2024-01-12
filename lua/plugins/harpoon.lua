@@ -2,10 +2,22 @@ return {
   'ThePrimeagen/harpoon',
   branch = "harpoon2",
   dependencies = { "nvim-lua/plenary.nvim" },
-  config = function()
-    require("harpoon"):setup()
-  end,
+  opts = {
+    settings = {
+      save_on_toggle = true
+    },
+  },
   keys = {
+    {
+      "<leader>lh",
+      function() require("harpoon").logger:show() end,
+      desc = "shows harpoon logger"
+    },
+    {
+      "<leader>rh",
+      function() require("lazy") vim.cmd("Lazy reload harpoon") end,
+      desc = "reloads harpoon and its configuration via lazy"
+    },
     {
       "<leader>a",
       function() require("harpoon"):list():append() end,
@@ -15,6 +27,16 @@ return {
       "<leader>h",
       function() local harpoon = require("harpoon") harpoon.ui:toggle_quick_menu(harpoon:list()) end,
       desc = "opens harpoon's list of buffers"
+    },
+    {
+      "<leader>q",
+      function() require("harpoon"):list():prev() end,
+      desc = "selects the previous buffer in harpoon list"
+    },
+    {
+      "<leader>e",
+      function() require("harpoon"):list():next() end,
+      desc = "selects the next buffer in harpoon list"
     },
     {
       "<leader>1",
@@ -60,16 +82,6 @@ return {
       "<leader>9",
       function() require("harpoon"):list():select(9) end,
       desc = "selects ninth buffer in harpoon list"
-    },
-    {
-      "<leader>q",
-      function() require("harpoon"):list():prev() end,
-      desc = "selects the previous buffer in harpoon list"
-    },
-    {
-      "<leader>e",
-      function() require("harpoon"):list():prev() end,
-      desc = "selects the next buffer in harpoon list"
     }
   }
 }

@@ -9,7 +9,8 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "L3MON4D3/LuaSnip",
     "folke/neodev.nvim",
-    "jmederosalvarado/roslyn.nvim"
+    "jmederosalvarado/roslyn.nvim",
+    "jlcrochet/vim-razor"
   },
   config = function()
     require("neodev").setup()
@@ -44,14 +45,14 @@ return {
       }
     })
 
-    -- local capabilities = vim.lsp.protocol.make_client_capabilities()
-    -- capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-    --
-    -- require("roslyn").setup({
-    --   dotnet_cmd = "dotnet",
-    --   roslyn_version = "4.8.0-3.23475.7",
-    --   on_attach = function () end,
-    --   capabilities = capabilities
-    -- })
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+    require("roslyn").setup({
+      dotnet_cmd = "dotnet",
+      roslyn_version = "4.8.0-3.23475.7",
+      on_attach = function () end,
+      capabilities = capabilities
+    })
   end
 }

@@ -6,17 +6,22 @@ return {
     {
       "<leader>ff",
       function() require("telescope.builtin").find_files() end,
-      desc = "global file search within directory"
+      desc = "search files by name within current directory"
     },
     {
-      "<leader>gf",
+      "<leader>fg",
       function() require("telescope.builtin").git_files() end,
-      desc = "search for files registered in git within directory"
+      desc = "search files by name registered in git"
     },
     {
-      "<leader>pf",
+      "<leader>fb",
+      function() require("telescope.builtin").buffers() end,
+      desc = "search open buffers by name"
+    },
+    {
+      "<leader>fs",
       function() require("telescope.builtin").grep_string({ search = vim.fn.input("greup > ") }) end,
-      desc = "search contents of all files for given input string"
-    }
+      desc = "search contents of all files in current directory for given input string"
+    },
   }
 }
