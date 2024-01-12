@@ -76,11 +76,12 @@ My neovim configuration and how to utilize it.
     - `:q` (may have to do this twice because of lazy window)
 # setting up as additional configuration
 ### windows
-1. rename nvim directory
+1. rename nvim directory after cloning it
+    - If you have an existing nvim configuration folder; clone this repo into a different directory, rename the cloned directory, and then move the directory to `~/appdata/local`.
     - ```powershell
       rename-item -path ~/appdata/local/nvim -newname ninvim
       ```
-2. create `APP_NAME` environment variable
+3. create `APP_NAME` environment variable
     - persist
         - ```powershell
           [System.Environment]::SetEnvironmentVariable('NVIM_APPNAME', 'ninvim', 'Machine')
@@ -90,7 +91,7 @@ My neovim configuration and how to utilize it.
         - ```powershell
           $env:NVIM_APPNAME = ninvim
           ```
-3. open neovim, wait for lazy to install plugins, & quit
+4. open neovim, wait for lazy to install plugins, & quit
     - `nvim`
     - wait for lazy to install plugins
     - `:q` (may have to do this twice because of lazy window)
