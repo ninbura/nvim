@@ -3,7 +3,9 @@ My neovim configuration and how to utilize it.
 # steps to utilize
 1. install dependencies
     - ### windows
-        - ```winget install jazzdelightsme.WingetPathUpdater```
+        - ```
+          winget install jazzdelightsme.WingetPathUpdater
+          ```
         - ```powershell
           # professional license (paid)
           winget install microsoft.visualstudio.2022.professional --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
