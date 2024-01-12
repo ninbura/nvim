@@ -1,4 +1,4 @@
-# ninbura/nvim
+# summary
 My neovim configuration and how to utilize it.
 # steps to utilize
 1. install dependencies
