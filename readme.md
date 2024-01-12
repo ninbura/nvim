@@ -6,6 +6,8 @@ My neovim configuration and how to utilize it.
         - ```powershell
           # with professional license
           winget install microsoft.visualstudio.2022.professional --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
+          ```
+        - ```powershell
           # without professional license
           winget install microsoft.visualstudio.2022.community --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
           ```
@@ -37,8 +39,11 @@ My neovim configuration and how to utilize it.
     - ### windows
         - `winget install neovim.neovim.nightly`
     - ### linux
-        - install neovim via [these instructions](https://github.com/neovim/neovim/blob/master/INSTALL.md#linux)
-        - `sudo mv nvim.appimage /usr/local/bin/nvim`
+        - ```bash
+          curl -LO https://github.com/neovim/neovim/releases/tag/nightly/download/nvim.appimage`
+          chmod u+x nvim.appimage
+          sudo mv nvim.appimage /usr/local/bin/nvim
+          ```
 3. create and or navigate to the configuration directory
     - ### windows
         - `cd ~/appdata/local`
