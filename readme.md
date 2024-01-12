@@ -83,7 +83,7 @@ My neovim configuration and how to utilize it.
       rename-item -path ~/appdata/local/nvim -newname ninvim
       ```
 3. create `APP_NAME` environment variable
-    - persist
+    - persistent
         - ```powershell
           [System.Environment]::SetEnvironmentVariable('NVIM_APPNAME', 'ninvim', 'Machine')
           $env:NVIM_APPNAME = [System.Environment]::GetEnvironmentVariable("NVIM_APPNAME", "Machine")
