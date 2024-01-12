@@ -27,12 +27,18 @@ My neovim configuration and how to utilize it.
           }
           ```
     - ### linux
-        - `sudo apt install llvm clang zip fuse ripgrep -y`
+        - ```bash
+          sudo apt install llvm clang zip fuse ripgrep -y
+          ```
         - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
-        - `source ~/.bashrc`
+        - ```bash
+          source ~/.bashrc
+          ```
     - ### both
-        - `nvm install latest`
-        - `nvm use latest`
+        - ```powershell
+          nvm install latest
+          nvm use latest
+          ```
 2. install neovim nightly
     - ### windows
         - `winget install neovim.neovim.nightly`
