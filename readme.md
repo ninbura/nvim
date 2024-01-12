@@ -67,6 +67,7 @@ My neovim configuration and how to utilize it.
     - ### ssh (applicable to just me 😈)
         - ```powershell
           git clone git@github.com:ninbura/nvim.git
+          cd nvim
           git config user.name "ninbura"
           git config user.email "gabriel@ninbura.com"
           ```
