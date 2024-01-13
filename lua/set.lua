@@ -2,8 +2,9 @@
 vim.g.mapleader = " "
 
 -- enable line numbers and set relative
+vim.opt.nu = true
 vim.opt.relativenumber = true
-vim.opt.statuscolumn = "%-3{v:lnum} %-2{v:relnum} %=%s"
+-- vim.opt.statuscolumn = "%-3{v:lnum} %-2{v:relnum} %=%s"
 
 -- vim.api.nvim_create_autocmd("BufEnter", { callback = function() print(vim.bo.filetype) end })
 
