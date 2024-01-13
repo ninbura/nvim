@@ -56,10 +56,12 @@ My neovim configuration and how to utilize it.
 3. create and or navigate to the configuration directory
     - ### windows
         - ```powershell
+          # nvim-data folder in same directory
           cd ~/appdata/local
           ```
     - ### linux
         - ```bash
+          # nvim-data folder - ~/.local/share/
           mkdir -p ~/.config && cd ~/.config
           ```
 4. git clone this repository
