@@ -14,6 +14,7 @@
           winget install microsoft.visualstudio.2022.community --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
           ```
         - ```powershell
+          # Requires a non-elvated terminal, which is not possible over ssh.
           winget install llvm.llvm coreybutler.nvmforwindows burntsushi.ripgrep.gnu --accept-package-agreements --accept-source-agreements
           ```
 
