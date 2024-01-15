@@ -1,11 +1,14 @@
 # preface
 I am assuming you are using PowerShell 7. If you are not using PowerShell 7, I will cry.
+```powershell
+    winget install microsoft.powershell
+```
 # setup
 1. ### install dependencies
     - #### windows
         - ```powershell
           # requires elevated shell
-          winget install jazzdelightsme.WingetPathUpdater
+          winget install jazzdelightsme.wingetPathUpdater
           ``` 
         - ```powershell
           # professional license (paid)
