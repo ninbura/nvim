@@ -1,3 +1,5 @@
+# preface
+I am assuming you are using PowerShell 7. If you are not using PowerShell 7, I will cry.
 # setup
 1. ### install dependencies
     - #### windows
