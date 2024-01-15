@@ -89,7 +89,7 @@
     - `:q` (may have to do this twice because of lazy window)
 # changing configurations
 - ### preface
-    - To change configurations on the fly, you simply need to rename you your nvim configuration folder & set the `NVIM_APPNAME` environment variable accordingly.
+    - To change configurations on the fly, simply rename you your nvim configuration folder & set the `NVIM_APPNAME` environment variable accordingly.
     - If you followed [as an additional configuration](#as-an-additional-configuration) under [git clone this repository](#git-clone-this-repository) in the setup instructions; you cloned the repository into a folder named `ninvim` instead of `nvim`.
 - ### setting the `NVIM_APPNAME` environment variable
     - #### windows
