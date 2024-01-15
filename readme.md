@@ -43,7 +43,7 @@
 2. ### install neovim nightly
     - #### windows
         - ```powershell
-          winget install neovim.neovim.nightly
+          winget install neovim.neovim.nightly --ignore-security-hash
           ```
     - #### linux
         - ```bash
