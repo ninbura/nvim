@@ -80,7 +80,7 @@ winget install microsoft.powershell
           chmod u+x nvim.appimage
           sudo mv nvim.appimage /usr/local/bin/nvim
           ```
-3. ### create and or navigate to the configuration directory
+3. ### create and or navigate to the neovim configuration directory
     - #### windows
         - ```powershell
           # nvim-data folder in same directory
