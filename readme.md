@@ -1,5 +1,5 @@
 # setup
-1. ### install dependencies
+1. ## install dependencies
     - #### windows
         - ```powershell
           # requires elevated shell
