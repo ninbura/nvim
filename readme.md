@@ -49,7 +49,7 @@ My neovim configuration and how to utilize it.
           ```
     - ### linux
         - ```bash
-          curl -LO https://github.com/neovim/neovim/releases/tag/nightly/download/nvim.appimage
+          curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
           chmod u+x nvim.appimage
           sudo mv nvim.appimage /usr/local/bin/nvim
           ```
