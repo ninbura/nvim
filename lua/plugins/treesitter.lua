@@ -8,7 +8,7 @@ return {
       ensure_installed = {
         "c", "lua", "vim", "vimdoc", "query", "javascript", "typescript", "rust", "markdown",
         "markdown_inline", "bash", "c_sharp", "css", "html", "dockerfile", "gitignore",
-        "json", "sql", "ssh_config", "xml", "yaml"
+        "json", "sql", "ssh_config", "xml", "yaml", "diff"
       },
       modules = {},
       ignore_install = {},
