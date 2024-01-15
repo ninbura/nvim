@@ -71,6 +71,8 @@ winget install microsoft.powershell
               [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
               $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
           }
+
+          if(test-path $archivePath) { Remove-Item -Path $archivePath -Force }
           ```
     - #### linux
         - ```bash
