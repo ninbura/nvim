@@ -66,29 +66,21 @@ My neovim configuration and how to utilize it.
           ```
 4. git clone this repository
     - ### as primary configuration
-        - #### https
-            - ```powershell
-              git clone https://github.com/ninbura/nvim
-              ```
-        - #### ssh (applicable to just me 😈)
-            - ```powershell
-              git clone git@github.com:ninbura/nvim.git
-              cd nvim
-              git config user.name "ninbura"
-              git config user.email "gabriel@ninbura.com"
-              ```
+        - ```powershell
+          git clone https://github.com/ninbura/nvim
+          ```
+        - ```powershell
+          git clone git@github.com:ninbura/nvim.git --config name=ninbura email=gabriel@ninbura.com
+          ```
     - ### as additional configuration
-        - #### https
-            - ```powershell
-              git clone https://github.com/ninbura/nvim ninvim
-              ```
-        - #### ssh (applicable to just me 😈)
-            - ```powershell
-              git clone git@github.com:ninbura/nvim.git ninvim
-              cd ninvim
-              git config user.name "ninbura"
-              git config user.email "gabriel@ninbura.com"
-              ```
+        - ```powershell
+          # https
+          git clone https://github.com/ninbura/nvim ninvim
+          ```
+        - ```powershell
+          # ssh
+          git clone git@github.com:ninbura/nvim.git ninvim --config name=ninbura email=gabriel@ninbura.com
+          ```
 5. open neovim, wait for lazy to install plugins, & quit
     - `nvim`
     - wait for lazy to install plugins
