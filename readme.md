@@ -89,4 +89,5 @@ My neovim configuration and how to utilize it.
     - wait for lazy to install plugins
     - `:q` (may have to do this twice because of lazy window)
 # changing configurations
-To change configurations on the fly, you simply need to rename you your nvim configuration folder & set the `APP_NAME` environment variable accordingly.
+- To change configurations on the fly, you simply need to rename you your nvim configuration folder & set the `APP_NAME` environment variable accordingly.
+- If you followed the setup instructions 
