@@ -46,6 +46,27 @@
           # Requires a non-elvated terminal, which is not possible over ssh.
           winget install neovim.neovim.nightly --ignore-security-hash
           ```
+        - ```powershell
+          # ssh friendly
+          $applicationPath = "~/documents/nvim-win64"
+          $archivePath = "~/documents/nvim.zip"
+            
+          if(test-path $applicationPath) {
+              remove-item -Path $applicationPath -Recurse -Force
+          }
+            
+          Invoke-WebRequest -Uri https://github.com/neovim/neovim/releases/download/nightly/nvim-win64.zip -OutFile $archivePath
+          Expand-Archive -Path $archivePath -DestinationPath ~/documents
+            
+          $currentPath = ([Environment]::GetEnvironmentVariable("Path"))
+            
+          if($currentPath.ToLower() -notmatch "c:\\users\\$env:username\\documents\\nvim-win64\\bin") {
+              $splitPath = $CurrentPath.Split(";")
+              $newPath = ($splitPath + "c:\users\$env:username\documents\nvim-win64\bin") -Join ";"
+              [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
+              $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+          }
+          ```
     - #### linux
         - ```bash
           curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
