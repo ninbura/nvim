@@ -49,8 +49,8 @@ My neovim configuration and how to utilize it.
           ```
     - ### linux
         - ```bash
-          sudo curl -LO https://github.com/neovim/neovim/releases/tag/nightly/download/nvim.appimage
-          sudo chmod u+x nvim.appimage
+          curl -LO https://github.com/neovim/neovim/releases/tag/nightly/download/nvim.appimage
+          chmod u+x nvim.appimage
           sudo mv nvim.appimage /usr/local/bin/nvim
           ```
 3. create and or navigate to the configuration directory
