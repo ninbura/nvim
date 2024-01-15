@@ -80,7 +80,7 @@ My neovim configuration and how to utilize it.
     - `nvim`
     - wait for lazy to install plugins
     - `:q` (may have to do this twice because of lazy window)
-# setting up as additional configuration
+# setting up as an additional configuration
 ### windows
 1. rename nvim directory after cloning it
     - If you have an existing nvim configuration folder; clone this repo into a different directory, rename the cloned directory, and then move the directory to `~/appdata/local`.
