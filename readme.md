@@ -70,7 +70,7 @@
           ```
         - ```powershell
           # ssh
-          git clone --config user.name=ninbura user.email=gabriel@ninbura.com git@github.com:ninbura/nvim.git
+          git clone git@github.com:ninbura/nvim.git --config "user.name=ninbura user.email=gabriel@ninbura.com"
           ```
     - #### as an additional configuration
         - ```powershell
@@ -79,7 +79,7 @@
           ```
         - ```powershell
           # ssh
-          git clone --config user.name=ninbura user.email=gabriel@ninbura.com git@github.com:ninbura/nvim.git ninvim
+          git clone git@github.com:ninbura/nvim.git ninvim --config "user.name=ninbura user.email=gabriel@ninbura.com"
           ```
         - see [changing configurations](#changing-configurations)
 5. ### open neovim, wait for lazy to install plugins, & quit
