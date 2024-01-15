@@ -1,5 +1,5 @@
 # preface
-If you're on Windows, I'm assuming you are using PowerShell 7. If you are not using PowerShell 7, I will cry.
+If you're on Windows, I'm assuming you're using PowerShell 7. If you're not using PowerShell 7, I will cry.
 ```powershell
 winget install microsoft.powershell
 ```
