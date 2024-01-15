@@ -1,8 +1,8 @@
 # summary
 My neovim configuration and how to utilize it.
 # setup
-1. install dependencies
-    - ### windows
+1. ### install dependencies
+    - #### windows
         - ```powershell
           # requires elevated shell
           winget install jazzdelightsme.WingetPathUpdater
@@ -29,7 +29,7 @@ My neovim configuration and how to utilize it.
               $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
           }
           ```
-    - ### linux
+    - #### linux
         - ```bash
           sudo apt install llvm clang zip fuse ripgrep -y
           ```
@@ -37,35 +37,35 @@ My neovim configuration and how to utilize it.
         - ```bash
           source ~/.bashrc
           ```
-    - ### both
+    - #### both
         - ```powershell
           nvm install latest
           nvm use latest
           ```
-2. install neovim nightly
-    - ### windows
+2. ### install neovim nightly
+    - #### windows
         - ```powershell
           winget install neovim.neovim.nightly
           ```
-    - ### linux
+    - #### linux
         - ```bash
           curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
           chmod u+x nvim.appimage
           sudo mv nvim.appimage /usr/local/bin/nvim
           ```
-3. create and or navigate to the configuration directory
-    - ### windows
+3. ### create and or navigate to the configuration directory
+    - #### windows
         - ```powershell
           # nvim-data folder in same directory
           cd ~/appdata/local
           ```
-    - ### linux
+    - #### linux
         - ```bash
           # nvim-data folder - ~/.local/share/
           mkdir -p ~/.config && cd ~/.config
           ```
-4. # git clone this repository
-    - ### as the primary configuration
+4. ### git clone this repository
+    - #### as the primary configuration
         - ```powershell
           # https
           git clone https://github.com/ninbura/nvim
@@ -74,7 +74,7 @@ My neovim configuration and how to utilize it.
           # ssh
           git clone git@github.com:ninbura/nvim.git --config name=ninbura email=gabriel@ninbura.com
           ```
-    - ### as an additional configuration
+    - #### as an additional configuration
         - see [changing configurations](#changing-configurations)
         - ```powershell
           # https
@@ -84,7 +84,7 @@ My neovim configuration and how to utilize it.
           # ssh
           git clone git@github.com:ninbura/nvim.git ninvim --config name=ninbura email=gabriel@ninbura.com
           ```
-5. open neovim, wait for lazy to install plugins, & quit
+5. ### open neovim, wait for lazy to install plugins, & quit
     - `nvim`
     - wait for lazy to install plugins
     - `:q` (may have to do this twice because of lazy window)
