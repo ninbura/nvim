@@ -95,8 +95,10 @@
     - #### windows
         - ```powershell
           # persistent
-          [System.Environment]::SetEnvironmentVariable("NVIM_APPNAME", "ninvim", "Machine")
-          $env:NVIM_APPNAME = ninvim
+          $nvimAppName = ninvim
+          
+          [System.Environment]::SetEnvironmentVariable("NVIM_APPNAME", $nvimAppName, "Machine")
+          $env:NVIM_APPNAME = $nvimAppName
           ```
         - ```powershell
           # ephemeral
