@@ -84,7 +84,8 @@
         - see [changing configurations](#changing-configurations)
 5. ### open neovim, wait for lazy to install plugins, & quit
     - `nvim`
-    - wait for lazy to install plugins
+    - allow Lazy time to install plugins
+    - allow Treesitter time to install parsers
     - `:q` (may have to do this twice because of lazy window)
 # changing configurations
 - ### preface
