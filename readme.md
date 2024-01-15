@@ -64,7 +64,7 @@ My neovim configuration and how to utilize it.
           # nvim-data folder - ~/.local/share/
           mkdir -p ~/.config && cd ~/.config
           ```
-4. git clone this repository
+4. # git clone this repository
     - ### as the primary configuration
         - ```powershell
           # https
