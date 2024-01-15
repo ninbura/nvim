@@ -1,5 +1,3 @@
-# summary
-My neovim configuration and how to utilize it.
 # setup
 1. ### install dependencies
     - #### windows
