@@ -73,7 +73,6 @@
           git clone git@github.com:ninbura/nvim.git --config name=ninbura email=gabriel@ninbura.com
           ```
     - #### as an additional configuration
-        - see [changing configurations](#changing-configurations)
         - ```powershell
           # https
           git clone https://github.com/ninbura/nvim ninvim
@@ -82,10 +81,28 @@
           # ssh
           git clone git@github.com:ninbura/nvim.git ninvim --config name=ninbura email=gabriel@ninbura.com
           ```
+        - see [changing configurations](#changing-configurations)
 5. ### open neovim, wait for lazy to install plugins, & quit
     - `nvim`
     - wait for lazy to install plugins
     - `:q` (may have to do this twice because of lazy window)
 # changing configurations
-- To change configurations on the fly, you simply need to rename you your nvim configuration folder & set the `APP_NAME` environment variable accordingly.
-- If you followed the setup instructions 
+- ### preface
+    - To change configurations on the fly, you simply need to rename you your nvim configuration folder & set the `APP_NAME` environment variable accordingly.
+    - If you followed [as an additional configuration](#as-an-additional-configuration) under [git clone this repository](#git-clone-this-repository) in the setup instructions; you cloned the repository into a folder named `ninvim` instead of `nvim`.
+- ### setting the `APP_NAME` environment variable
+    - #### windows
+        - ```powershell
+          # persistent
+          [System.Environment]::SetEnvironmentVariable('NVIM_APPNAME', 'ninvim', 'Machine')
+          $env:NVIM_APPNAME = [System.Environment]::GetEnvironmentVariable("NVIM_APPNAME", "Machine")
+          ```
+        - ```powershell
+          # ephemeral
+          $env:NVIM_APPNAME = ninvim
+          ```
+    - #### linux
+        - ```bash
+          # Changes configuration for current session, add to ~/.profile for persistence.
+          
+          ``` 
