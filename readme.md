@@ -65,14 +65,17 @@ My neovim configuration and how to utilize it.
           mkdir -p ~/.config && cd ~/.config
           ```
 4. git clone this repository
-    - ### as primary configuration
+    - ### as the primary configuration
         - ```powershell
+          # https
           git clone https://github.com/ninbura/nvim
           ```
         - ```powershell
+          # ssh
           git clone git@github.com:ninbura/nvim.git --config name=ninbura email=gabriel@ninbura.com
           ```
-    - ### as additional configuration
+    - ### as an additional configuration
+        - see [changing configurations](#changing-configurations)
         - ```powershell
           # https
           git clone https://github.com/ninbura/nvim ninvim
@@ -85,3 +88,5 @@ My neovim configuration and how to utilize it.
     - `nvim`
     - wait for lazy to install plugins
     - `:q` (may have to do this twice because of lazy window)
+# changing configurations
+To change configurations on the fly, you simply need to rename you your nvim configuration folder & set the `APP_NAME` environment variable accordingly.
