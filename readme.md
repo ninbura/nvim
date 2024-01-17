@@ -19,8 +19,11 @@ winget install microsoft.powershell
           winget install microsoft.visualstudio.2022.community --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
           ```
         - ```powershell
-          winget install llvm.llvm coreybutler.nvmforwindows burntsushi.ripgrep.gnu --accept-package-agreements --accept-source-agreements
+          winget install git.git llvm.llvm coreybutler.nvmforwindows burntsushi.ripgrep.gnu --accept-package-agreements --accept-source-agreements
           ```
+        - ```powershell
+          git clone https://github.com/ninbura/diff.git ~/documents/diff
+          ``` 
 
         - ```powershell
           $currentPath = ([Environment]::GetEnvironmentVariable("Path"))
