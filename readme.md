@@ -29,7 +29,7 @@ winget install microsoft.powershell
           $relevantDirectories = @(C:\Program Files\LLVM\bin, C:\Users\$env:username\Documents\diff)
           $currentPath = ([Environment]::GetEnvironmentVariable("Path"))
 
-          foreach($directory in $relevantDirectories) {
+          foreach($directory in $relevantDirectories.replace("\", "\\")) {
               if($currentPath -notmatch $directory) {
                   $splitPath = $CurrentPath.Split(";")
                   $newPath = ($splitPath + $directory) -Join ";"
@@ -70,10 +70,11 @@ winget install microsoft.powershell
           Expand-Archive -Path $archivePath -DestinationPath ~/documents
             
           $currentPath = ([Environment]::GetEnvironmentVariable("Path"))
+          $neovimDirectory = "C:\Users\$env:username\Documents\nvim-win64\bin"
             
-          if($currentPath.ToLower() -notmatch "c:\\users\\$env:username\\documents\\nvim-win64\\bin") {
+          if($currentPath -notmatch $neovimDirectory.replace("\", "\\")) {
               $splitPath = $CurrentPath.Split(";")
-              $newPath = ($splitPath + "c:\users\$env:username\documents\nvim-win64\bin") -Join ";"
+              $newPath = ($splitPath + $neovimDirectory) -Join ";"
               [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
               $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
           }
