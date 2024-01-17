@@ -30,8 +30,6 @@ winget install microsoft.powershell
           $machineAndUserPath = ([Environment]::GetEnvironmentVariable("Path"))
 
           foreach($directory in $relevantDirectories) {
-              Write-Host $directory
-          
               if($machineAndUserPath -notmatch $directory.replace("\", "\\")) {
                   $splitPath = [Environment]::GetEnvironmentVariable("Path", "Machine").Split(";")
                   $newPath = ($splitPath + $directory) -Join ";"
