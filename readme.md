@@ -29,8 +29,8 @@ winget install microsoft.powershell
           $relevantDirectories = @("C:\Program Files\LLVM\bin", "C:\Users\$env:username\Documents\diff")
           $currentPath = ([Environment]::GetEnvironmentVariable("Path"))
 
-          foreach($directory in $relevantDirectories.replace("\", "\\")) {
-              if($currentPath -notmatch $directory) {
+          foreach($directory in $relevantDirectories) {
+              if($currentPath -notmatch $directory.replace("\", "\\")) {
                   $splitPath = $CurrentPath.Split(";")
                   $newPath = ($splitPath + $directory) -Join ";"
                   [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
