@@ -22,7 +22,7 @@ winget install microsoft.powershell
           winget install git.git llvm.llvm coreybutler.nvmforwindows burntsushi.ripgrep.gnu --accept-package-agreements --accept-source-agreements
           ```
         - ```powershell
-          git clone https://github.com/ninbura/diff.git /documents/diff
+          git clone https://github.com/ninbura/diff.git c:/users/$env:username/documents/diff
           ``` 
 
         - ```powershell
