@@ -27,16 +27,16 @@ winget install microsoft.powershell
 
         - ```powershell
           $relevantDirectories = @("C:\Program Files\LLVM\bin", "C:\Users\$env:username\Documents\diff")
-          $currentPath = ([Environment]::GetEnvironmentVariable("Path", "Machine"))
+          $machineAndUserPath = ([Environment]::GetEnvironmentVariable("Path"))
 
           foreach($directory in $relevantDirectories) {
               Write-Host $directory
           
-              if($currentPath -notmatch $directory.replace("\", "\\")) {
-                  $splitPath = $CurrentPath.Split(";")
+              if($machineAndUserPath -notmatch $directory.replace("\", "\\")) {
+                  $splitPath = [Environment]::GetEnvironmentVariable("Path", "Machine").Split(";")
                   $newPath = ($splitPath + $directory) -Join ";"
                   [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
-                  $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+                  $env:Path = [System.Environment]::GetEnvironmentVariable("Path")
               }
           }
           ```
@@ -71,14 +71,14 @@ winget install microsoft.powershell
           Invoke-WebRequest -Uri https://github.com/neovim/neovim/releases/download/nightly/nvim-win64.zip -OutFile $archivePath
           Expand-Archive -Path $archivePath -DestinationPath ~/documents
             
-          $currentPath = ([Environment]::GetEnvironmentVariable("Path"))
+          $machineAndUserPath = ([Environment]::GetEnvironmentVariable("Path"))
           $neovimDirectory = "C:\Users\$env:username\Documents\nvim-win64\bin"
             
-          if($currentPath -notmatch $neovimDirectory.replace("\", "\\")) {
-              $splitPath = $CurrentPath.Split(";")
+          if($machineAndUserPath -notmatch $neovimDirectory.replace("\", "\\")) {
+              $splitPath = [Environment]::GetEnvironmentVariable("Path", "Machine").Split(";")
               $newPath = ($splitPath + $neovimDirectory) -Join ";"
               [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
-              $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+              $env:Path = [System.Environment]::GetEnvironmentVariable("Path")
           }
 
           if(test-path $archivePath) { Remove-Item -Path $archivePath -Force }
