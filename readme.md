@@ -27,7 +27,7 @@ winget install microsoft.powershell
 
         - ```powershell
           $relevantDirectories = @("C:\Program Files\LLVM\bin", "C:\Users\$env:username\Documents\diff")
-          $currentPath = ([Environment]::GetEnvironmentVariable("Path"))
+          $currentPath = ([Environment]::GetEnvironmentVariable("Path", "Machine"))
 
           foreach($directory in $relevantDirectories) {
               Write-Host $directory
