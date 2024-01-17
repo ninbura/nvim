@@ -26,13 +26,16 @@ winget install microsoft.powershell
           ``` 
 
         - ```powershell
+          $relevantDirectories = @(C:\Program Files\LLVM\bin, C:\Users\$env:username\Documents\diff)
           $currentPath = ([Environment]::GetEnvironmentVariable("Path"))
-          
-          if($currentPath.ToLower() -notmatch "llvm\\bin") {
-              $splitPath = $CurrentPath.Split(";")
-              $newPath = ($splitPath + "C:\Program Files\LLVM\bin") -Join ";"
-              [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
-              $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+
+          foreach($directory in $relevantDirectories) {
+              if($currentPath -notmatch $directory) {
+                  $splitPath = $CurrentPath.Split(";")
+                  $newPath = ($splitPath + $directory) -Join ";"
+                  [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
+                  $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+              }
           }
           ```
     - #### linux
