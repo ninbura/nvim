@@ -26,7 +26,7 @@ winget install microsoft.powershell
           ``` 
 
         - ```powershell
-          $relevantDirectories = @(C:\Program Files\LLVM\bin, C:\Users\$env:username\Documents\diff)
+          $relevantDirectories = @("C:\Program Files\LLVM\bin", "C:\Users\$env:username\Documents\diff")
           $currentPath = ([Environment]::GetEnvironmentVariable("Path"))
 
           foreach($directory in $relevantDirectories.replace("\", "\\")) {
