@@ -1,9 +1,14 @@
+# preface
+If you're on Windows, I'm assuming you're using PowerShell 7. If you're not using PowerShell 7, I will cry.
+```powershell
+winget install microsoft.powershell
+```
 # setup
 1. ### install dependencies
     - #### windows
         - ```powershell
           # requires elevated shell
-          winget install jazzdelightsme.WingetPathUpdater
+          winget install jazzdelightsme.wingetPathUpdater
           ``` 
         - ```powershell
           # professional license (paid)
@@ -14,17 +19,23 @@
           winget install microsoft.visualstudio.2022.community --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
           ```
         - ```powershell
-          winget install llvm.llvm coreybutler.nvmforwindows burntsushi.ripgrep.gnu --accept-package-agreements --accept-source-agreements
+          winget install git.git llvm.llvm coreybutler.nvmforwindows burntsushi.ripgrep.gnu --accept-package-agreements --accept-source-agreements
           ```
+        - ```powershell
+          git clone https://github.com/ninbura/diff.git c:/users/$env:username/documents/diff
+          ``` 
 
         - ```powershell
-          $currentPath = ([Environment]::GetEnvironmentVariable("Path"))
-          
-          if($currentPath.ToLower() -notmatch "llvm\\bin") {
-              $splitPath = $CurrentPath.Split(";")
-              $newPath = ($splitPath + "C:\Program Files\LLVM\bin") -Join ";"
-              [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
-              $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+          $relevantDirectories = @("C:\Program Files\LLVM\bin", "C:\Users\$env:username\Documents\diff")
+          $machineAndUserPath = ([Environment]::GetEnvironmentVariable("Path"))
+
+          foreach($directory in $relevantDirectories) {
+              if($machineAndUserPath -notmatch $directory.replace("\", "\\")) {
+                  $splitPath = [Environment]::GetEnvironmentVariable("Path", "Machine").Split(";")
+                  $newPath = ($splitPath + $directory) -Join ";"
+                  [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
+                  $env:Path = [System.Environment]::GetEnvironmentVariable("Path")
+              }
           }
           ```
     - #### linux
@@ -43,7 +54,32 @@
 2. ### install neovim nightly
     - #### windows
         - ```powershell
-          winget install neovim.neovim.nightly
+          # Requires a non-elvated terminal, which is not possible over ssh.
+          winget install neovim.neovim.nightly --ignore-security-hash
+          ```
+        - ```powershell
+          # ssh friendly
+          $applicationPath = "~/documents/nvim-win64"
+          $archivePath = "~/documents/nvim.zip"
+            
+          if(test-path $applicationPath) {
+              remove-item -Path $applicationPath -Recurse -Force
+          }
+            
+          Invoke-WebRequest -Uri https://github.com/neovim/neovim/releases/download/nightly/nvim-win64.zip -OutFile $archivePath
+          Expand-Archive -Path $archivePath -DestinationPath ~/documents
+            
+          $machineAndUserPath = ([Environment]::GetEnvironmentVariable("Path"))
+          $neovimDirectory = "C:\Users\$env:username\Documents\nvim-win64\bin"
+            
+          if($machineAndUserPath -notmatch $neovimDirectory.replace("\", "\\")) {
+              $splitPath = [Environment]::GetEnvironmentVariable("Path", "Machine").Split(";")
+              $newPath = ($splitPath + $neovimDirectory) -Join ";"
+              [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
+              $env:Path = [System.Environment]::GetEnvironmentVariable("Path")
+          }
+
+          if(test-path $archivePath) { Remove-Item -Path $archivePath -Force }
           ```
     - #### linux
         - ```bash
@@ -51,7 +87,7 @@
           chmod u+x nvim.appimage
           sudo mv nvim.appimage /usr/local/bin/nvim
           ```
-3. ### create and or navigate to the configuration directory
+3. ### create and or navigate to the neovim configuration directory
     - #### windows
         - ```powershell
           # nvim-data folder in same directory
