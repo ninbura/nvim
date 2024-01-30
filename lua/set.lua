@@ -37,15 +37,17 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 -- guide for linebreaking long bits of code
-vim.opt.colorcolumn = "180"
+vim.opt.colorcolumn = "182"
 
 -- set default terminal to powershell 7 if computer is running windows
 if(vim.loop.os_uname().sysname == "Windows_NT")
   then
-    vim.opt.shell = vim.fn.executable "pwsh" and "pwsh" or "powershell"
-    vim.opt.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
-    vim.opt.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
-    vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
+    vim.opt.shell = vim.fn.executable "pwsh" == 1 and "pwsh" or "powershell"
+    vim.opt.shellcmdflag = "-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues[''Out-File:Encoding'']=''utf8'';Remove-Alias -Force -ErrorAction SilentlyContinue tee;"
+    vim.opt.shellredir = "2>&1 | %%{ '$_' } | Out-File %s; exit $LastExitCode"
+    vim.opt.shellpipe = "2>&1 | %%{ '$_' } | tee %s; exit $LastExitCode"
     vim.opt.shellquote = ""
     vim.opt.shellxquote = ""
+
+    -- vim.g.undotree_DiffCommand = "VBinDiff.exe"
   end
