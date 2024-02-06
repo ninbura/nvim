@@ -106,7 +106,7 @@ winget install microsoft.powershell
           ```
         - ```powershell
           # ssh
-          git clone git@github.com:ninbura/nvim.git --config "user.name=ninbura user.email=gabriel@ninbura.com"
+          git clone git@github.com:ninbura/nvim.git --config name=ninbura --conbfig email=gabriel@ninbura.com
           ```
     - #### as an additional configuration
         - ```powershell
@@ -115,7 +115,7 @@ winget install microsoft.powershell
           ```
         - ```powershell
           # ssh
-          git clone git@github.com:ninbura/nvim.git ninvim --config "user.name=ninbura user.email=gabriel@ninbura.com"
+          git clone git@github.com:ninbura/nvim.git ninvim --config name=ninbura --conbfig email=gabriel@ninbura.com
           ```
         - see [changing configurations](#changing-configurations)
 5. ### open neovim, wait for lazy to install plugins, & quit
