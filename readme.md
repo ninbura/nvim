@@ -83,7 +83,7 @@ winget install microsoft.powershell
           ```
     - #### linux
         - ```bash
-          wget -qO- https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+          wget -O https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
           chmod u+x nvim.appimage
           sudo mv nvim.appimage /usr/local/bin/nvim
           ```
