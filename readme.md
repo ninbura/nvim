@@ -40,7 +40,7 @@ winget install microsoft.powershell
           ```
     - #### linux
         - ```bash
-          sudo apt install llvm clang zip fuse ripgrep -y
+          sudo apt install curl llvm clang zip fuse ripgrep -y
           ```
         - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
         - ```bash
