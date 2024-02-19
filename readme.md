@@ -48,8 +48,8 @@ winget install microsoft.powershell
           ```
     - #### both
         - ```powershell
-          nvm install latest
-          nvm use latest
+          nvm install lts
+          nvm use lts
           ```
 2. ### install neovim nightly
     - #### windows
