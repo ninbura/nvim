@@ -123,10 +123,13 @@ winget install microsoft.powershell
     - allow Lazy time to install plugins
     - allow Treesitter time to install parsers
     - `:q` (may have to do this twice because of lazy window)
-6. ### intialize github copilot
-    - If you pay for GitHub copilot, and would like to utilize it via this configuration; run the following command and follow the printed instructions.
+6. ### intialize github copilot & rosyln
+    - Totally optional, only applicable if you pay for GitHub Copilot, or you use [roslyn.nvim](https://github.com/jmederosalvarado/roslyn.nvim).
     - ```
       :Copilot setup
+      ```
+    - ```
+      :CSInstallRoslyn
       ```
 # changing configurations
 - ### preface
