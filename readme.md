@@ -131,7 +131,7 @@ winget install microsoft.powershell
     - ```
       :CSInstallRoslyn
       ```
-    - See [here](https://github.com/jmederosalvarado/roslyn.nvim/issues/4#issuecomment-1859198818) if you're trying to initialize the server with dotnet != 7.
+    - See [here](https://github.com/jmederosalvarado/roslyn.nvim/issues/4#issuecomment-1859198818) if you're trying to initialize the Roslyn server with dotnet != 7.
 # changing configurations
 - ### preface
     - To change configurations on the fly, simply rename you your nvim configuration folder & set the `NVIM_APPNAME` environment variable accordingly.
