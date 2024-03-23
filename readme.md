@@ -125,12 +125,15 @@ winget install microsoft.powershell
     - `:q` (may have to do this twice because of lazy window)
 6. ### intialize github copilot & rosyln
     - Totally optional, only applicable if you pay for GitHub Copilot, or you use [roslyn.nvim](https://github.com/jmederosalvarado/roslyn.nvim).
-    - ```
-      :Copilot setup
-      ```
-    - ```
-      :CSInstallRoslyn
-      ```
+    - #### copilot
+        - ```
+          :Copilot setup
+          ```
+    - #### roslyn
+        - See [here](https://github.com/jmederosalvarado/roslyn.nvim/issues/4#issuecomment-1859198818) if you're trying to initialize the Roslyn server with dotnet != 7.
+        - ```
+          :CSInstallRoslyn
+          ```
 # changing configurations
 - ### preface
     - To change configurations on the fly, simply rename you your nvim configuration folder & set the `NVIM_APPNAME` environment variable accordingly.
