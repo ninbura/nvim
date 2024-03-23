@@ -12,33 +12,34 @@ return {
     "jmederosalvarado/roslyn.nvim",
     "jlcrochet/vim-razor"
   },
+  -- cmd = "CSInstallRoslyn",
   config = function()
     require("neodev").setup()
 
-    local lsp_zero = require('lsp-zero')
+    local lsp_zero = require("lsp-zero")
 
     lsp_zero.on_attach(function(client, bufnr)
       lsp_zero.default_keymaps({buffer = bufnr})
     end)
 
-    require('mason').setup {
+    require("mason").setup {
       -- log_level = vim.log.levels.DEBUG
       log_level = vim.log.levels.INFO
     }
 
-    require('mason-lspconfig').setup({
+    require("mason-lspconfig").setup({
       -- Replace the language servers listed here 
       -- with the ones you want to install
       ensure_installed = {
-        'tsserver',
-        'rust_analyzer',
-        'eslint',
-        'lua_ls',
-        'dockerls',
-        'docker_compose_language_service',
-        'powershell_es',
-        'sqlls',
-        'tailwindcss'
+        "tsserver",
+        "rust_analyzer",
+        "eslint",
+        "lua_ls",
+        "dockerls",
+        "docker_compose_language_service",
+        "powershell_es",
+        "sqlls",
+        "tailwindcss"
       },
       handlers = {
         lsp_zero.default_setup,
