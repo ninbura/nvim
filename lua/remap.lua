@@ -26,6 +26,7 @@ vim.keymap.set("n", "<leader>pv", "<C-w>v<C-w>l", { desc = "split window vertica
 vim.keymap.set("n", "<leader>ph", "<C-w>s<C-w>j", { desc = "split window horizontally and move to new split" })
 
 vim.keymap.set("n", "<leader>cc", ":CopilotChatOpen<CR>", { desc = "open copilot chat" })
+vim.keymap.set("n", "<leader>cq", ":CopilotChatClose<CR>", { desc = "close copilot chat" })
 
 -- visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "move selected lines up" })
