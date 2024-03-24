@@ -9,9 +9,19 @@ local function open_term_in_split(term_number)
 
   vim.api.nvim_command("wincmd j")
 
-  vim.schedule(function()
-    require("harpoon"):list("term"):select(term_number)
-  end)
+  require("harpoon"):list("term"):select(term_number)
+end
+
+local function create_standard_layout()
+  vim.api.nvim_command("wincmd v")
+
+  open_term_in_split(1)
+
+  vim.api.nvim_command("wincmd l")
+
+  open_term_in_split(2)
+
+  vim.api.nvim_command("1wincmd w")
 end
 
 local function term_select(list_item, list, options)
@@ -85,6 +95,11 @@ return {
     }
   },
   keys = {
+    {
+      "<leader>ps",
+      function() create_standard_layout() end,
+      desc = "Creates multiple splits to create my 'standard layout' for programming"
+    },
     {
       "<leader>th",
       function() local harpoon = require("harpoon") harpoon.ui:toggle_quick_menu(harpoon:list("term")) end,
