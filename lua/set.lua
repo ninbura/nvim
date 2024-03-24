@@ -5,8 +5,10 @@ vim.g.mapleader = " "
 vim.opt.nu = true
 vim.opt.relativenumber = true
 -- vim.opt.statuscolumn = "%-3{v:lnum} %-2{v:relnum} %=%s"
-
 -- vim.api.nvim_create_autocmd("BufEnter", { callback = function() print(vim.bo.filetype) end })
+
+-- add window number to status line
+vim.opt.statusline = ' #%{winnr()}      %f %= %l,%c      %P '
 
 -- indenting
 vim.opt.tabstop = 2

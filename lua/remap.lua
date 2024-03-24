@@ -28,6 +28,11 @@ vim.keymap.set("n", "<leader>ph", "<C-w>s<C-w>j", { desc = "split window horizon
 vim.keymap.set("n", "<leader>cc", ":CopilotChatOpen<CR>", { desc = "open copilot chat" })
 vim.keymap.set("n", "<leader>cq", ":CopilotChatClose<CR>", { desc = "close copilot chat" })
 
+for i = 1, 9 do
+  vim.api.nvim_set_keymap('n', '<leader>p'..i, ':'..i..'wincmd w<CR>', { desc = "move to window " .. i })
+end
+
+
 -- visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "move selected lines up" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "move selected lines down" })
