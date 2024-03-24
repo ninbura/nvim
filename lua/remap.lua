@@ -1,40 +1,31 @@
 -- normal mode
-vim.keymap.set("n", "<leader>ge", vim.cmd.Ex) -- open file explorer
+vim.keymap.set("n", "<leader>ge", vim.cmd.Ex, { desc = "open file explorer" })
 
-vim.keymap.set("n", "<leader>ln", function () vim.opt.relativenumber = false end) -- set line numbers non-relative
-vim.keymap.set("n", "<leader>lr", function () vim.opt.relativenumber = true end) -- set line numbers relative
+vim.keymap.set("n", "<leader>ln", function () vim.opt.relativenumber = false end, { desc = "set line numbers non-relative" })
+vim.keymap.set("n", "<leader>lr", function () vim.opt.relativenumber = true end, {desc = "set line numbers relative" })
 
-vim.keymap.set("n", "J", "mzJ`z") -- move next line up but keep cursor in static position
+vim.keymap.set("n", "J", "mzJ`z", { desc = "move next line up but keep cursore in static position" })
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "move half page up but keep cursor in center of screen" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "move half page down but keep cursor in center of screen" })
 
-vim.keymap.set("n", "n", "nzzzv") -- keep cursor in center screen when going to next search
-vim.keymap.set("n", "N", "Nzzzv") -- keep cursor in center screen when going to last search
+vim.keymap.set("n", "n", "nzzzv", { desc = "keep cursor in center screen when going to next search" })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "keep cursor in center screen when going to previous search" })
 
--- vim.keymap.set("n", "<leader>y", [["+y]]) -- copy selection into system clipboard
--- vim.keymap.set("n", "<leader>Y", [["+Y]]) -- copy focused line into system clipboard
+vim.keymap.set("n", "<leader>d", [["_d]], { desc = "delete to void register" })
 
-vim.keymap.set("n", "<leader>d", [["_d]]) -- delete to void register
+vim.keymap.set("n", "Q", "<nop>", { desc = "disable ex mode" })
 
-vim.keymap.set("n", "Q", "<nop>") -- delete to void register
+vim.keymap.set("n", "<leader>rs", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "initiates replace for all instances of currently hovered string" })
 
--- quick fix stuff
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "make open file executable" })
 
-vim.keymap.set("n", "<leader>rs", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- initiates replace for all instances of currently hovered string
+vim.keymap.set("n", "<leader><leader>", function() vim.cmd("so") end, { desc = "source current file" })
 
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true }) -- makes currenly open bash script executable
+vim.keymap.set("n", "<leader>pv", "<C-w>v<C-w>l", { desc = "split window vertically and move to new split" })
+vim.keymap.set("n", "<leader>ph", "<C-w>s<C-w>j", { desc = "split window horizontally and move to new split" })
 
-vim.keymap.set("n", "<leader><leader>", function() -- source currently opened file
-    vim.cmd("so")
-end)
-
--- vim.keymap.set("n", "<leader>ps", "<cmd>e %homepath%/appdata/local/nvim/lua/ninbura/packer.lua<CR>"); -- Busted, not sure exactly what it does.
-
+vim.keymap.set("n", "<leader>cc", ":CopilotChatOpen<CR>", { desc = "open copilot chat" })
 
 -- visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "move selected lines up" })
@@ -45,6 +36,5 @@ vim.keymap.set("v", "<leader>d", [["_d]], { desc = "delete to void register" })
 -- terminal mode
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "override esc to enter normal mode" })
 
-
 -- wtf is x mode
-vim.keymap.set("x", "<leader>p", [["_dp]]) -- keep existing value in clipboard when pasting over an existing word
+vim.keymap.set("x", "<leader>p", [["_dp]], { desc = "paste without yanking" })

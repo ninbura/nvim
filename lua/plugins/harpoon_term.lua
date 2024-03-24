@@ -1,3 +1,19 @@
+local function open_term_in_split(term_number)
+  local current_window = vim.api.nvim_get_current_win()
+  local current_window_height = vim.api.nvim_win_get_height(current_window)
+  local desired_split_height_percentage = 15
+  local specified_split_height = math.floor(current_window_height * (1 - (desired_split_height_percentage / 100)))
+  local split_command = specified_split_height .. ' split'
+
+  vim.api.nvim_command(split_command)
+
+  vim.api.nvim_command("wincmd j")
+
+  vim.schedule(function()
+    require("harpoon"):list("term"):select(term_number)
+  end)
+end
+
 local function term_select(list_item, list, options)
   local Extensions = require("harpoon.extensions")
   local Logger = require("harpoon.logger")
@@ -93,6 +109,76 @@ return {
       "<leader>t4",
       function() require("harpoon"):list("term"):select(4) end,
       desc = "selects fourth buffer in harpoon term list"
+    },
+    {
+      "<leader>t5",
+      function() require("harpoon"):list("term"):select(5) end,
+      desc = "selects fifth buffer in harpoon term list"
+    },
+    {
+      "<leader>t6",
+      function() require("harpoon"):list("term"):select(6) end,
+      desc = "selects sixth buffer in harpoon term list"
+    },
+    {
+      "<leader>t7",
+      function() require("harpoon"):list("term"):select(7) end,
+      desc = "selects seventh buffer in harpoon term list"
+    },
+    {
+      "<leader>t8",
+      function() require("harpoon"):list("term"):select(8) end,
+      desc = "selects eighth buffer in harpoon term list"
+    },
+    {
+      "<leader>t9",
+      function() require("harpoon"):list("term"):select(9) end,
+      desc = "selects ninth buffer in harpoon term list"
+    },
+    {
+      "<leader>pt1",
+      function() open_term_in_split(1) end,
+      desc = "split window and open first terminal buffer"
+    },
+    {
+      "<leader>pt2",
+      function() open_term_in_split(2) end,
+      desc = "split window and open second terminal buffer"
+    },
+    {
+      "<leader>pt3",
+      function() open_term_in_split(3) end,
+      desc = "split window and open third terminal buffer"
+    },
+    {
+      "<leader>pt4",
+      function() open_term_in_split(4) end,
+      desc = "split window and open fourth terminal buffer"
+    },
+    {
+      "<leader>pt5",
+      function() open_term_in_split(5) end,
+      desc = "split window and open fifth terminal buffer"
+    },
+    {
+      "<leader>pt6",
+      function() open_term_in_split(6) end,
+      desc = "split window and open sixth terminal buffer"
+    },
+    {
+      "<leader>pt7",
+      function() open_term_in_split(7) end,
+      desc = "split window and open seventh terminal buffer"
+    },
+    {
+      "<leader>pt8",
+      function() open_term_in_split(8) end,
+      desc = "split window and open eighth terminal buffer"
+    },
+    {
+      "<leader>pt9",
+      function() open_term_in_split(9) end,
+      desc = "split window and open ninth terminal buffer"
     }
   }
 }
