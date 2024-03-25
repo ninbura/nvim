@@ -12,7 +12,35 @@ local function open_term_in_split(term_number)
   require("harpoon"):list("term"):select(term_number)
 end
 
+local function get_count_of_windows()
+  local windows = vim.api.nvim_list_wins()
+  return #windows
+end
+
+local function close_all_but_first_window()
+  local count_of_windows = get_count_of_windows()
+
+  if count_of_windows == 1 then
+    return
+  end
+
+  local windows = vim.api.nvim_list_wins()
+  for i, window in ipairs(windows) do
+    if i ~= 1 then
+      vim.api.nvim_win_close(window, false)
+    end
+  end
+end
+
 local function create_standard_layout()
+  close_all_but_first_window()
+
+  local count_of_windows = get_count_of_windows()
+
+  if count_of_windows > 1 then
+    return
+  end
+
   vim.api.nvim_command("wincmd v")
 
   open_term_in_split(1)
@@ -29,10 +57,10 @@ local function term_select(list_item, list, options)
   local Logger = require("harpoon.logger")
 
   Logger:log(
-  "term_config#select",
-  list_item,
-  list.name,
-  options
+    "term_config#select",
+    list_item,
+    list.name,
+    options
   )
 
   options = options or {}
