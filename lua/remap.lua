@@ -16,7 +16,7 @@ vim.keymap.set("n", "<leader>d", [["_d]], { desc = "delete to void register" })
 
 vim.keymap.set("n", "Q", "<nop>", { desc = "disable ex mode" })
 
-vim.keymap.set("n", "<leader>rs", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "initiates replace for all instances of currently hovered string" })
+vim.keymap.set("n", "<leader>ra", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "initiates replace for all instances of currently hovered string" })
 
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "make open file executable" })
 
@@ -33,6 +33,8 @@ for i = 1, 9 do
 end
 
 vim.keymap.set("n", "<leader>=", ":windo vertical resize<CR>", { desc = "resize all windows to equal width" })
+
+vim.keymap.set("n", "<leader>fr", "*#cgn", { desc = "Delete word under cursor, sets up find and replace by pressing [.] after." })
 
 -- visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "move selected lines up" })
