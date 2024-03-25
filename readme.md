@@ -38,6 +38,10 @@ winget install microsoft.powershell
               }
           }
           ```
+        - ```powershell
+          nvm install lts
+          nvm use lts
+          ```
     - #### linux
         - ```bash
           sudo apt install curl llvm clang zip fuse ripgrep -y
@@ -46,10 +50,9 @@ winget install microsoft.powershell
         - ```bash
           source ~/.bashrc
           ```
-    - #### both
-        - ```powershell
-          nvm install lts
-          nvm use lts
+        - ```bash
+          nvm install lts/*
+          nvm use lts/*
           ```
 2. ### install neovim nightly
     - #### windows
