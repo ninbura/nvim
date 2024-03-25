@@ -1,3 +1,11 @@
+-- local width = math.min(vim.api.nvim_get_option("columns"), 240)
+--
+-- local bufnr, winnr = vim.lsp.util.open_floating_preview(
+--   { "Your plain text here" },
+--   "",
+--   { border = "rounded", max_width = width }
+-- )
+
 -- set leader key
 vim.g.mapleader = " "
 

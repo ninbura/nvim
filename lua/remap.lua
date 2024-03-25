@@ -32,6 +32,7 @@ for i = 1, 9 do
   vim.api.nvim_set_keymap('n', '<leader>p'..i, ':'..i..'wincmd w<CR>', { desc = "move to window " .. i })
 end
 
+vim.keymap.set("n", "<leader>=", ":windo vertical resize<CR>", { desc = "resize all windows to equal width" })
 
 -- visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "move selected lines up" })

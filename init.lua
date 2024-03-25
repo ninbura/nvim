@@ -1,4 +1,5 @@
 require("set")
 require("remap")
-require("get_focused_side")
+require("logger")
+require("event_handlers")
 require("lazy_init")
