@@ -2,6 +2,14 @@ local focused_position_file_path = vim.fn.stdpath('config') .. "/config/focused-
 local specified_fraction_file_path = vim.fn.stdpath('config') .. "/config/specified-fraction.txt"
 local default_fraction = 30
 
+local function create_config_directory_if_not_exists()
+  local config_directory = vim.fn.stdpath('config') .. "/config"
+
+  if vim.fn.isdirectory(config_directory) == 0 then
+    vim.fn.mkdir(config_directory, "p")
+  end
+end
+
 function Write_To_Focused_Position_File(side)
   local file = io.open(focused_position_file_path, "w")
 
@@ -90,6 +98,7 @@ local function handle_win_enter()
   Write_To_Focused_Position_File(focused_side)
 end
 
+create_config_directory_if_not_exists()
 create_focused_position_file_if_not_exists()
 create_specified_fraction_file_if_not_exists()
 Write_To_Focused_Position_File("left")
