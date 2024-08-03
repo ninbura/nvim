@@ -1,11 +1,11 @@
 # macOS setup
 ### notes
 - Neovim's config directory
-    - ```bash
+    - ```Zsh
       ~/.config/nvim
       ```
 - Neovim's data directory
-    - ```bash
+    - ```Zsh
       ~/.local/share/nvim-data
       ```
 ### steps
@@ -14,29 +14,29 @@
 # Linux setup
 ### notes
 - Neovim's config directory
-    - ```bash
+    - ```Bash
       ~/.config/nvim
       ```
 - Neovim's data directory
-    - ```bash
+    - ```Bash
       ~/.local/share/nvim-data
       ```
 - These instructions are structured around Ubuntu, they will vary depending on your choice of Linux distrobution.
 ### steps
 1. #### install Neovim & configuration dependencies
-    - ```bash
+    - ```Bash
       sudo apt install neovim curl llvm clang zip fuse ripgrep -y
       ```
     - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
-    - ```bash
+    - ```Bash
       source ~/.bashrc
       ```
-    - ```bash
+    - ```Bash
       nvm install lts/*
       nvm use lts/*
       ```
 2. #### create the Neovim config directory's parent directory
-    - ```bash
+    - ```Bash
       mkdir -p ~/.config
       ```
 3. #### git clone this repository into the relevant location
@@ -81,11 +81,11 @@
 # Windows Setup
 ### notes
 - Neovim's config directory
-    - ```bash
+    - ```Bash
       ~/appdata/local/nvim
       ```
 - Neovim's data directory
-    - ```bash
+    - ```Bash
       ~/appdata/local/nvim-data
       ```
 - If you're not using PowerShell 7, I will cry.
@@ -191,9 +191,9 @@
                 - ```Bash
                   ~/.profile
                   ``` 
-    - #### windows
+    - #### Windows
         - persistent 
-            - ```powershell
+            - ```PowerShell
               # persistent
               $nvimAppName = ninvim
               
@@ -201,6 +201,6 @@
               $env:NVIM_APPNAME = $nvimAppName
               ```
         - ephemeral
-            - ```powershell
+            - ```PowerShell
               $env:NVIM_APPNAME = ninvim
               ```
