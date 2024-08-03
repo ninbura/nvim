@@ -10,7 +10,48 @@
       ```
 ### steps
 1. install Homebrew via [these insructions](https://docs.brew.sh/Installation)
-
+2. #### create the Neovim config directory's parent directory
+    - ```Zsh
+      mkdir ~/.config
+      ```
+3. #### git clone this repository into the relevant location
+    - as the primary configuration
+        - https
+            - ```Zsh
+              git clone https://github.com/ninbura/nvim ~/.config/nvim
+              ```
+        - ssh
+            - ```Zsh
+              git clone git@github.com:ninbura/nvim.git ~/.config/nvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
+              ```
+    - as an additional configuration
+        - see [changing configurations](#changing-configurations)
+        - https
+            - ```Zsh
+              git clone https://github.com/ninbura/nvim ~/.config/ninvim
+              ```
+        - ssh
+            - ```Zsh
+              git clone git@github.com:ninbura/nvim.git ~/.config/ninvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
+              ```
+4. #### Open neovim, wait for lazy to install plugins, & quit.
+    - ```Zsh
+      nvim
+      ```
+    - allow Lazy time to install plugins
+    - allow Treesitter time to install parsers
+    - ```Zsh
+      :q
+      ```
+5. #### intialize github copilot & rosyln if desired
+    - see [here](https://github.com/jmederosalvarado/roslyn.nvim/issues/4#issuecomment-1859198818) if you're trying to initialize the Roslyn server with dotnet != 7
+    - run the following commands in Neovim
+    - ```
+      :Copilot setup
+      ```
+    - ```
+      :CSInstallRoslyn
+      ```     
 # Linux setup
 ### notes
 - Neovim's config directory
@@ -37,27 +78,27 @@
       ```
 2. #### create the Neovim config directory's parent directory
     - ```Bash
-      mkdir -p ~/.config
+      mkdir ~/.config
       ```
 3. #### git clone this repository into the relevant location
-    - ##### as the primary configuration
+    - as the primary configuration
         - https
-            - ```bash
-              git clone https://github.com/ninbura/nvim ~/appdata/local/nvim
+            - ```Bash
+              git clone https://github.com/ninbura/nvim ~/.config/nvim
               ```
         - ssh
-            - ```bash
-              git clone git@github.com:ninbura/nvim.git ~/appdata/local/nvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
+            - ```Bash
+              git clone git@github.com:ninbura/nvim.git ~/.config/nvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
               ```
-    - ##### as an additional configuration
+    - as an additional configuration
         - see [changing configurations](#changing-configurations)
         - https
-            - ```bash
-              git clone https://github.com/ninbura/nvim ~/appdata/local/ninvim
+            - ```Bash
+              git clone https://github.com/ninbura/nvim ~/.config/ninvim
               ```
         - ssh
-            - ```bash
-              git clone git@github.com:ninbura/nvim.git ~/appdata/local/ninvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
+            - ```Bash
+              git clone git@github.com:ninbura/nvim.git ~/.config/ninvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
               ```
 4. #### Open neovim, wait for lazy to install plugins, & quit.
     - ```Bash
