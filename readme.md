@@ -4,7 +4,7 @@
 
 # Linux setup
 ### preface
-- Istrunctions here are for Ubuntu, they may vary slightly depending on your distribution.
+- These instructions are for Ubuntu, they may vary slightly depending on your distribution.
 ### steps
 1. #### install Neovim & configuration dependencies
     - ```bash
