@@ -21,7 +21,7 @@
     - ```bash
       ~/.local/share/nvim-data
       ```
-- These instructions are for Ubuntu, they may vary slightly depending on your distribution.
+- These instructions are structured around Ubuntu, they will vary depending on your choice of Linux distrobution.
 ### steps
 1. #### install Neovim & configuration dependencies
     - ```bash
