@@ -1,19 +1,13 @@
-# Preface
-### Linux
-Istrunctions here are for Ubuntu, they may vary slightly depending on your distribution.
-
-### macOS
-You'll need to install Homebrew, instructions for how to do so can be found [here](https://docs.brew.sh/Installation).
-
-### Windows
-If you're not using PowerShell 7, I will cry.
-```PowerShell
-winget install microsoft.powershell
-```
 # macOS Setup
+### Preface
+You'll need to install Homebrew, instructions for how to do so can be found [here](https://docs.brew.sh/Installation).
+### Steps
 
-# Linux Setup
-1. ### Install Dependencies
+# Linux
+### Preface
+Istrunctions here are for Ubuntu, they may vary slightly depending on your distribution.
+### Steps
+1. #### Install Dependencies
     - ```bash
       sudo apt install curl llvm clang zip fuse ripgrep -y
       ```
@@ -25,8 +19,13 @@ winget install microsoft.powershell
       nvm install lts/*
       nvm use lts/*
       ```
-# Windows Setup
-1. ### Install Dependencies
+# Windows
+### Preface
+If you're not using PowerShell 7, I will cry.
+```PowerShell
+winget install microsoft.powershell
+```
+1. #### Install Dependencies
     - ```PowerShell
       # requires elevated shell
       winget install jazzdelightsme.WingetPathUpdater
