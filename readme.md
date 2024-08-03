@@ -189,7 +189,7 @@
                   ```
             - Linux
                 - ```Bash
-                  
+                  ~/.profile
                   ``` 
     - #### windows
         - persistent 
