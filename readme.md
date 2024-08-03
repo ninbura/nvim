@@ -1,7 +1,6 @@
 # macOS setup
-### preface
-You'll need to install Homebrew, instructions for how to do so can be found [here](https://docs.brew.sh/Installation).
 ### steps
+1. install Homebrew via [these insructions](https://docs.brew.sh/Installation)
 
 # Linux setup
 ### preface
@@ -19,12 +18,12 @@ You'll need to install Homebrew, instructions for how to do so can be found [her
       nvm install lts/*
       nvm use lts/*
       ```
-2. ### create the Neovim config's parent directory
+2. #### create the Neovim config directory's parent directory
     - ```bash
       mkdir -p ~/.config
       ```
-3. ### git clone this repository into the Neovim config's parent directory
-    - #### as the primary configuration
+3. #### git clone this repository into the relevant location
+    - ##### as the primary configuration
         - https
             - ```bash
               git clone https://github.com/ninbura/nvim ~/appdata/local/nvim
@@ -33,7 +32,7 @@ You'll need to install Homebrew, instructions for how to do so can be found [her
             - ```bash
               git clone git@github.com:ninbura/nvim.git ~/appdata/local/nvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
               ```
-    - #### as an additional configuration
+    - ##### as an additional configuration
         - see [changing configurations](#changing-configurations)
         - https
             - ```bash
@@ -43,6 +42,20 @@ You'll need to install Homebrew, instructions for how to do so can be found [her
             - ```bash
               git clone git@github.com:ninbura/nvim.git ~/appdata/local/ninvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
               ```
+4. #### Open neovim, wait for lazy to install plugins, & quit.
+    - ```PowerShell
+      nvim
+      ```
+    - allow Lazy time to install plugins
+    - allow Treesitter time to install parsers
+    - ```
+      :q
+      ```
+    - note that you may have to run `:q` twice due to lazy's popup window
+5. #### intialize GitHub Copilot if desired
+    - ```
+      :Copilot setup
+      ```
 ### notes
 - Neovim's data folder can be found at the following location.
     - ```bash
@@ -54,19 +67,24 @@ If you're not using PowerShell 7, I will cry.
 ```PowerShell
 winget install microsoft.powershell
 ```
-1. #### install Neovim & configuration dependencies
-    - ```PowerShell
-      # requires elevated shell
-      winget install jazzdelightsme.WingetPathUpdater
-      ``` 
-    - ```PowerShell
-      # professional license (paid)
-      winget install Microsoft.VisualStudio.2022.Professional --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
-      ```
-    - ```PowerShell
-      # community license (free)
-      winget install Microsoft.VisualStudio.2022.Community --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
-      ```
+### steps
+1. #### enable running PowerShell scripts
+    - requires elevated shell
+        - ```PowerShell
+          Set-ExecutionPolicy RemoteSigned
+          ```
+2. #### install Neovim & configuration dependencies
+    - requires elevated shell
+        - ```PowerShell
+          winget install jazzdelightsme.WingetPathUpdater
+          ```
+    - Pick one of the following Visual Studio installs, note that professional is paid & community is free.
+        - ```PowerShell
+          winget install Microsoft.VisualStudio.2022.Professional --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
+          ```
+        - ```PowerShell
+          winget install Microsoft.VisualStudio.2022.Community --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
+          ```
     - ```PowerShell
       winget install Neovim.Neovim Git.Git LLVM.LLVM CoreyButler.NVMforwindows BurntSushi.ripgrep.GNU --accept-package-agreements --accept-source-agreements
       ```
@@ -90,8 +108,8 @@ winget install microsoft.powershell
       nvm install lts
       nvm use lts
       ```
-2. ### git clone this repository into the Neovim config's parent directory
-    - #### as the primary configuration
+3. #### git clone this repository into the relevant location
+    - ##### as the primary configuration
         - https
             - ```PowerShell
               git clone https://github.com/ninbura/nvim ~/appdata/local/nvim
@@ -100,7 +118,7 @@ winget install microsoft.powershell
             - ```PowerShell
               git clone git@github.com:ninbura/nvim.git ~/appdata/local/nvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
               ```
-    - #### as an additional configuration
+    - ##### as an additional configuration
         - see [changing configurations](#changing-configurations)
         - https
             - ```PowerShell
@@ -110,22 +128,31 @@ winget install microsoft.powershell
             - ```PowerShell
               git clone git@github.com:ninbura/nvim.git ~/appdata/local/ninvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
               ```
-5. ### open neovim, wait for lazy to install plugins, & quit
-    - `nvim`
+4. #### Open neovim, wait for lazy to install plugins, & quit.
+    - ```PowerShell
+      nvim
+      ```
     - allow Lazy time to install plugins
     - allow Treesitter time to install parsers
-    - `:q` (may have to do this twice because of lazy window)
-6. ### intialize github copilot & rosyln
-    - Totally optional, only applicable if you pay for GitHub Copilot, or you use [roslyn.nvim](https://github.com/jmederosalvarado/roslyn.nvim).
-    - #### copilot
+    - ```
+      :q
+      ```
+    - note that you may have to run `:q` twice due to lazy's popup window
+5. #### intialize github copilot & rosyln if desired
+    - ##### copilot
         - ```
           :Copilot setup
           ```
-    - #### roslyn
+    - ##### roslyn
         - See [here](https://github.com/jmederosalvarado/roslyn.nvim/issues/4#issuecomment-1859198818) if you're trying to initialize the Roslyn server with dotnet != 7.
         - ```
           :CSInstallRoslyn
           ```
+### notes
+- Neovim's data folder can be found at the following location.
+    - ```bash
+      ~/.local/share/nvim-data
+      ```
 # changing configurations
 - ### preface
     - To change configurations on the fly, simply rename you your nvim configuration folder & set the `NVIM_APPNAME` environment variable accordingly.
