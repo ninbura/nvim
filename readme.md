@@ -2,11 +2,11 @@
 ### notes
 - Neovim's config directory
     - ```bash
-      ~/appdata/local/nvim
+      ~/.config/nvim
       ```
 - Neovim's data directory
     - ```bash
-      ~/appdata/local/nvim-data
+      ~/.local/share/nvim-data
       ```
 ### steps
 1. install Homebrew via [these insructions](https://docs.brew.sh/Installation)
