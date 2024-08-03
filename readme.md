@@ -10,11 +10,19 @@
       ```
 ### steps
 1. install Homebrew via [these insructions](https://docs.brew.sh/Installation)
-2. #### create the Neovim config directory's parent directory
+2. #### install Neovim & configuration dependencies
+    - ```Zsh
+      brew install neovim llvm ripgrep nvm
+      ```
+    - ```Zsh
+      nvm install lts/*
+      nvm use lts/*
+      ```
+3. #### create the Neovim config directory's parent directory
     - ```Zsh
       mkdir ~/.config
       ```
-3. #### git clone this repository into the relevant location
+4. #### git clone this repository into the relevant location
     - as the primary configuration
         - https
             - ```Zsh
@@ -34,7 +42,7 @@
             - ```Zsh
               git clone git@github.com:ninbura/nvim.git ~/.config/ninvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
               ```
-4. #### Open neovim, wait for lazy to install plugins, & quit.
+5. #### Open neovim, wait for lazy to install plugins, & quit.
     - ```Zsh
       nvim
       ```
@@ -43,7 +51,7 @@
     - ```Zsh
       :q
       ```
-5. #### intialize github copilot & rosyln if desired
+6. #### intialize github copilot & rosyln if desired
     - see [here](https://github.com/jmederosalvarado/roslyn.nvim/issues/4#issuecomment-1859198818) if you're trying to initialize the Roslyn server with dotnet != 7
     - run the following commands in Neovim
     - ```
