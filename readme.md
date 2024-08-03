@@ -32,7 +32,7 @@
       source ~/.profile
       ```
     - ```Zsh
-      nvm install lts/*
+      nvm install --lts
       nvm use lts/*
       ```
 6. #### git clone this repository into the relevant location
@@ -98,7 +98,7 @@
       source ~/.bashrc
       ```
     - ```Bash
-      nvm install lts/*
+      nvm install --lts
       nvm use lts/*
       ```
 3. #### git clone this repository into the relevant location
@@ -192,8 +192,8 @@
       }
       ```
     - ```powershell
-      nvm install lts
-      nvm use lts
+      nvm install --lts
+      nvm use lts/*
       ```
 3. #### git clone this repository into the relevant location
     - ##### as the primary configuration
