@@ -10,57 +10,58 @@ If you're not using PowerShell 7, I will cry.
 ```PowerShell
 winget install microsoft.powershell
 ```
-# Setup
+# macOS Setup
+
+# Linux Setup
 1. ### Install Dependencies
-    - #### Windows
-        - ```PowerShell
-          # requires elevated shell
-          winget install jazzdelightsme.WingetPathUpdater
-          ``` 
-        - ```PowerShell
-          # professional license (paid)
-          winget install Microsoft.VisualStudio.2022.Professional --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
-          ```
-        - ```PowerShell
-          # community license (free)
-          winget install Microsoft.VisualStudio.2022.Community --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
-          ```
-        - ```PowerShell
-          winget install Git.Git LLVM.LLVM CoreyButler.NVMforwindows BurntSushi.ripgrep.GNU --accept-package-agreements --accept-source-agreements
-          ```
-        - ```PowerShell
-          git clone https://github.com/ninbura/diff.git c:/users/$env:username/documents/diff
-          ``` 
+    - ```bash
+      sudo apt install curl llvm clang zip fuse ripgrep -y
+      ```
+    - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
+    - ```bash
+      source ~/.bashrc
+      ```
+    - ```bash
+      nvm install lts/*
+      nvm use lts/*
+      ```
+# Windows Setup
+1. ### Install Dependencies
+    - ```PowerShell
+      # requires elevated shell
+      winget install jazzdelightsme.WingetPathUpdater
+      ``` 
+    - ```PowerShell
+      # professional license (paid)
+      winget install Microsoft.VisualStudio.2022.Professional --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
+      ```
+    - ```PowerShell
+      # community license (free)
+      winget install Microsoft.VisualStudio.2022.Community --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
+      ```
+    - ```PowerShell
+      winget install Git.Git LLVM.LLVM CoreyButler.NVMforwindows BurntSushi.ripgrep.GNU --accept-package-agreements --accept-source-agreements
+      ```
+    - ```PowerShell
+      git clone https://github.com/ninbura/diff.git c:/users/$env:username/documents/diff
+      ``` 
+    - ```PowerShell
+      $relevantDirectories = @("C:\Program Files\LLVM\bin", "C:\Users\$env:username\Documents\diff")
+      $machineAndUserPath = ([Environment]::GetEnvironmentVariable("Path"))
 
-        - ```PowerShell
-          $relevantDirectories = @("C:\Program Files\LLVM\bin", "C:\Users\$env:username\Documents\diff")
-          $machineAndUserPath = ([Environment]::GetEnvironmentVariable("Path"))
-
-          foreach($directory in $relevantDirectories) {
-              if($machineAndUserPath -notmatch $directory.replace("\", "\\")) {
-                  $splitPath = [Environment]::GetEnvironmentVariable("Path", "Machine").Split(";")
-                  $newPath = ($splitPath + $directory) -Join ";"
-                  [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
-                  $env:Path = [System.Environment]::GetEnvironmentVariable("Path")
-              }
+      foreach($directory in $relevantDirectories) {
+          if($machineAndUserPath -notmatch $directory.replace("\", "\\")) {
+              $splitPath = [Environment]::GetEnvironmentVariable("Path", "Machine").Split(";")
+              $newPath = ($splitPath + $directory) -Join ";"
+              [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
+              $env:Path = [System.Environment]::GetEnvironmentVariable("Path")
           }
-          ```
-        - ```powershell
-          nvm install lts
-          nvm use lts
-          ```
-    - #### linux
-        - ```bash
-          sudo apt install curl llvm clang zip fuse ripgrep -y
-          ```
-        - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
-        - ```bash
-          source ~/.bashrc
-          ```
-        - ```bash
-          nvm install lts/*
-          nvm use lts/*
-          ```
+      }
+      ```
+    - ```powershell
+      nvm install lts
+      nvm use lts
+      ```
 2. ### install neovim nightly
     - #### windows
         - ```powershell
