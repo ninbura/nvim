@@ -1,4 +1,4 @@
-# preface
+# Preface
 ### Linux
 Istrunctions here are for Ubuntu, they may vary slightly depending on your distribution.
 
@@ -10,29 +10,29 @@ If you're not using PowerShell 7, I will cry.
 ```PowerShell
 winget install microsoft.powershell
 ```
-# setup
-1. ### install dependencies
-    - #### windows
-        - ```powershell
+# Setup
+1. ### Install Dependencies
+    - #### Windows
+        - ```PowerShell
           # requires elevated shell
-          winget install jazzdelightsme.wingetPathUpdater
+          winget install jazzdelightsme.WingetPathUpdater
           ``` 
-        - ```powershell
+        - ```PowerShell
           # professional license (paid)
-          winget install microsoft.visualstudio.2022.professional --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
+          winget install Microsoft.VisualStudio.2022.Professional --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
           ```
-        - ```powershell
+        - ```PowerShell
           # community license (free)
-          winget install microsoft.visualstudio.2022.community --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
+          winget install Microsoft.VisualStudio.2022.Community --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
           ```
-        - ```powershell
-          winget install git.git llvm.llvm coreybutler.nvmforwindows burntsushi.ripgrep.gnu --accept-package-agreements --accept-source-agreements
+        - ```PowerShell
+          winget install Git.Git LLVM.LLVM CoreyButler.NVMforwindows BurntSushi.ripgrep.GNU --accept-package-agreements --accept-source-agreements
           ```
-        - ```powershell
+        - ```PowerShell
           git clone https://github.com/ninbura/diff.git c:/users/$env:username/documents/diff
           ``` 
 
-        - ```powershell
+        - ```PowerShell
           $relevantDirectories = @("C:\Program Files\LLVM\bin", "C:\Users\$env:username\Documents\diff")
           $machineAndUserPath = ([Environment]::GetEnvironmentVariable("Path"))
 
