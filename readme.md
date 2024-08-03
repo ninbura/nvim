@@ -60,19 +60,26 @@
               git clone git@github.com:ninbura/nvim.git ~/appdata/local/ninvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
               ```
 4. #### Open neovim, wait for lazy to install plugins, & quit.
-    - ```PowerShell
+    - ```Bash
       nvim
       ```
     - allow Lazy time to install plugins
     - allow Treesitter time to install parsers
-    - ```
+    - ```Bash
       :q
       ```
     - note that you may have to run `:q` twice due to lazy's popup window
-5. #### intialize GitHub Copilot if desired
-    - ```
-      :Copilot setup
-      ```
+5. #### intialize github copilot & rosyln if desired
+    - run the following commands in Neovim
+    - copilot
+        - ```
+          :Copilot setup
+          ```
+    - roslyn
+        - See [here](https://github.com/jmederosalvarado/roslyn.nvim/issues/4#issuecomment-1859198818) if you're trying to initialize the Roslyn server with dotnet != 7.
+        - ```
+          :CSInstallRoslyn
+          ```
 # Windows Setup
 ### notes
 - Neovim's config directory
@@ -159,34 +166,45 @@
       ```
     - note that you may have to run `:q` twice due to lazy's popup window
 5. #### intialize github copilot & rosyln if desired
-    - ##### copilot
+    - run the following commands in Neovim
+    - copilot
         - ```
           :Copilot setup
           ```
-    - ##### roslyn
+    - roslyn
         - See [here](https://github.com/jmederosalvarado/roslyn.nvim/issues/4#issuecomment-1859198818) if you're trying to initialize the Roslyn server with dotnet != 7.
         - ```
           :CSInstallRoslyn
           ```
 # changing configurations
-- ### preface
+- ### notes
     - To change configurations on the fly, simply rename you your nvim configuration folder & set the `NVIM_APPNAME` environment variable accordingly.
     - If you followed [as an additional configuration](#as-an-additional-configuration) under [git clone this repository](#git-clone-this-repository) in the setup instructions; you cloned the repository into a folder named `ninvim` instead of `nvim`.
 - ### setting the `NVIM_APPNAME` environment variable
-    - #### windows
-        - ```powershell
-          # persistent
-          $nvimAppName = ninvim
-          
-          [System.Environment]::SetEnvironmentVariable("NVIM_APPNAME", $nvimAppName, "Machine")
-          $env:NVIM_APPNAME = $nvimAppName
-          ```
-        - ```powershell
-          # ephemeral
-          $env:NVIM_APPNAME = ninvim
-          ```
     - #### linux
+        - Running the following command in your terminal will change your Neovim configuration for your current session (ephemeral). Adding the following command to your profile will change your configuration for all sessions at login (persistent).
         - ```bash
-          # Changes configuration for current session, add to ~/.profile for persistence.
           export NVIM_APPNAME=ninvim
-          ``` 
+          ```
+        - profile locations
+            - macOS
+                - ```Zsh
+                  ~/.zprofile
+                  ```
+            - Linux
+                - ```Bash
+                  
+                  ``` 
+    - #### windows
+        - persistent 
+            - ```powershell
+              # persistent
+              $nvimAppName = ninvim
+              
+              [System.Environment]::SetEnvironmentVariable("NVIM_APPNAME", $nvimAppName, "Machine")
+              $env:NVIM_APPNAME = $nvimAppName
+              ```
+        - ephemeral
+            - ```powershell
+              $env:NVIM_APPNAME = ninvim
+              ```
