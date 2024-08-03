@@ -29,6 +29,9 @@
           [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
           ```
     - ```Zsh
+      source ~/.profile
+      ```
+    - ```Zsh
       nvm install lts/*
       nvm use lts/*
       ```
