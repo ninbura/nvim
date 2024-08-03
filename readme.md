@@ -1,15 +1,15 @@
-# macOS Setup
-### Preface
+# macOS setup
+### preface
 You'll need to install Homebrew, instructions for how to do so can be found [here](https://docs.brew.sh/Installation).
-### Steps
+### steps
 
-# Linux
-### Preface
-Istrunctions here are for Ubuntu, they may vary slightly depending on your distribution.
-### Steps
-1. #### Install Dependencies
+# Linux setup
+### preface
+- Istrunctions here are for Ubuntu, they may vary slightly depending on your distribution.
+### steps
+1. #### install neovim & configuration dependencies
     - ```bash
-      sudo apt install curl llvm clang zip fuse ripgrep -y
+      sudo apt install neovim curl llvm clang zip fuse ripgrep -y
       ```
     - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
     - ```bash
@@ -19,13 +19,23 @@ Istrunctions here are for Ubuntu, they may vary slightly depending on your distr
       nvm install lts/*
       nvm use lts/*
       ```
-# Windows
-### Preface
+2. ### create Neovim config directory
+    - ```bash
+
+      mkdir -p ~/.config
+      ```
+### notes
+- Neovim's data folder can be found at the following location.
+    - ```bash
+      ~/.local/share/nvim-data
+      ```
+# Windows Setup
+### preface
 If you're not using PowerShell 7, I will cry.
 ```PowerShell
 winget install microsoft.powershell
 ```
-1. #### Install Dependencies
+1. #### install Neovim & configuration dependencies
     - ```PowerShell
       # requires elevated shell
       winget install jazzdelightsme.WingetPathUpdater
@@ -39,7 +49,7 @@ winget install microsoft.powershell
       winget install Microsoft.VisualStudio.2022.Community --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
       ```
     - ```PowerShell
-      winget install Git.Git LLVM.LLVM CoreyButler.NVMforwindows BurntSushi.ripgrep.GNU --accept-package-agreements --accept-source-agreements
+      winget install Neovim.Neovim Git.Git LLVM.LLVM CoreyButler.NVMforwindows BurntSushi.ripgrep.GNU --accept-package-agreements --accept-source-agreements
       ```
     - ```PowerShell
       git clone https://github.com/ninbura/diff.git c:/users/$env:username/documents/diff
@@ -61,44 +71,7 @@ winget install microsoft.powershell
       nvm install lts
       nvm use lts
       ```
-2. ### install neovim nightly
-    - #### windows
-        - ```powershell
-          # Requires a non-elvated terminal, which is not possible over ssh.
-          winget install neovim.neovim.nightly --ignore-security-hash
-          ```
-        - ```powershell
-          # ssh friendly
-          $applicationPath = "~/documents/nvim-win64"
-          $archivePath = "~/documents/nvim.zip"
-            
-          if(test-path $applicationPath) {
-              remove-item -Path $applicationPath -Recurse -Force
-          }
-            
-          Invoke-WebRequest -Uri https://github.com/neovim/neovim/releases/download/nightly/nvim-win64.zip -OutFile $archivePath
-          Expand-Archive -Path $archivePath -DestinationPath ~/documents
-            
-          $machineAndUserPath = ([Environment]::GetEnvironmentVariable("Path"))
-          $neovimDirectory = "C:\Users\$env:username\Documents\nvim-win64\bin"
-            
-          if($machineAndUserPath -notmatch $neovimDirectory.replace("\", "\\")) {
-              $splitPath = [Environment]::GetEnvironmentVariable("Path", "Machine").Split(";")
-              $newPath = ($splitPath + $neovimDirectory) -Join ";"
-              [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
-              $env:Path = [System.Environment]::GetEnvironmentVariable("Path")
-          }
-
-          if(test-path $archivePath) { Remove-Item -Path $archivePath -Force }
-          ```
-    - #### linux
-        - ```bash
-          wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-          chmod u+x nvim.appimage
-          sudo mv nvim.appimage /usr/local/bin/nvim
-          ```
-3. ### create and or navigate to the neovim configuration directory
-    - #### windows
+2. ### create and or navigate to the Neovim config directory
         - ```powershell
           # nvim-data folder in same directory
           cd ~/appdata/local
