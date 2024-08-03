@@ -3,7 +3,15 @@
 1. install Homebrew via [these insructions](https://docs.brew.sh/Installation)
 
 # Linux setup
-### preface
+### notes
+- Neovim config directory
+    - ```bash
+      ~/appdata/local/nvim
+      ```
+- Neovim data directory
+    - ```bash
+      ~/appdata/local/nvim-data
+      ```
 - These instructions are for Ubuntu, they may vary slightly depending on your distribution.
 ### steps
 1. #### install Neovim & configuration dependencies
@@ -56,17 +64,20 @@
     - ```
       :Copilot setup
       ```
+# Windows Setup
 ### notes
-- Neovim's data folder can be found at the following location.
+- Neovim config directory
+    - ```bash
+      ~/.config/nvim
+      ```
+- Neovim data directory
     - ```bash
       ~/.local/share/nvim-data
       ```
-# Windows Setup
-### preface
-If you're not using PowerShell 7, I will cry.
-```PowerShell
-winget install microsoft.powershell
-```
+- If you're not using PowerShell 7, I will cry.
+    - ```PowerShell
+      winget install microsoft.powershell
+      ```
 ### steps
 1. #### enable running PowerShell scripts
     - requires elevated shell
@@ -148,11 +159,6 @@ winget install microsoft.powershell
         - ```
           :CSInstallRoslyn
           ```
-### notes
-- Neovim's data folder can be found at the following location.
-    - ```bash
-      ~/.local/share/nvim-data
-      ```
 # changing configurations
 - ### preface
     - To change configurations on the fly, simply rename you your nvim configuration folder & set the `NVIM_APPNAME` environment variable accordingly.
