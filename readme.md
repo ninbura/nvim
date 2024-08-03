@@ -1,16 +1,25 @@
 # macOS setup
+### notes
+- Neovim's config directory
+    - ```bash
+      ~/appdata/local/nvim
+      ```
+- Neovim's data directory
+    - ```bash
+      ~/appdata/local/nvim-data
+      ```
 ### steps
 1. install Homebrew via [these insructions](https://docs.brew.sh/Installation)
 
 # Linux setup
 ### notes
-- Neovim config directory
+- Neovim's config directory
     - ```bash
-      ~/appdata/local/nvim
+      ~/.config/nvim
       ```
-- Neovim data directory
+- Neovim's data directory
     - ```bash
-      ~/appdata/local/nvim-data
+      ~/.local/share/nvim-data
       ```
 - These instructions are for Ubuntu, they may vary slightly depending on your distribution.
 ### steps
@@ -66,13 +75,13 @@
       ```
 # Windows Setup
 ### notes
-- Neovim config directory
+- Neovim's config directory
     - ```bash
-      ~/.config/nvim
+      ~/appdata/local/nvim
       ```
-- Neovim data directory
+- Neovim's data directory
     - ```bash
-      ~/.local/share/nvim-data
+      ~/appdata/local/nvim-data
       ```
 - If you're not using PowerShell 7, I will cry.
     - ```PowerShell
