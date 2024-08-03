@@ -12,7 +12,7 @@
 1. install Homebrew via [these insructions](https://docs.brew.sh/Installation)
 2. #### install Neovim & configuration dependencies
     - ```Zsh
-      brew install neovim llvm ripgrep nvm
+      brew install neovim ripgrep nvm
       ```
     - ```Zsh
       nvm install lts/*
