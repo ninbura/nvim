@@ -1,5 +1,5 @@
 # macOS setup
-## notes
+### notes
 - Neovim's config directory
     - ```bash
       ~/.config/nvim
