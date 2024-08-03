@@ -1,6 +1,13 @@
 # preface
-If you're on Windows, I'm assuming you're using PowerShell 7. If you're not using PowerShell 7, I will cry.
-```powershell
+### Linux
+Istrunctions here are for Ubuntu, they may vary slightly depending on your distribution.
+
+### macOS
+You'll need to install Homebrew, instructions for how to do so can be found [here](https://docs.brew.sh/Installation).
+
+### Windows
+If you're not using PowerShell 7, I will cry.
+```PowerShell
 winget install microsoft.powershell
 ```
 # setup
