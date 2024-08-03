@@ -177,7 +177,7 @@
     - To change configurations on the fly, simply rename you your nvim configuration folder & set the `NVIM_APPNAME` environment variable accordingly.
     - If you followed [as an additional configuration](#as-an-additional-configuration) under [git clone this repository](#git-clone-this-repository) in the setup instructions; you cloned the repository into a folder named `ninvim` instead of `nvim`.
 - ### setting the `NVIM_APPNAME` environment variable
-    - #### linux
+    - #### macOS & linux
         - Running the following command in your terminal will change your Neovim configuration for your current session (ephemeral). Adding the following command to your profile will change your configuration for all sessions at login (persistent).
         - ```bash
           export NVIM_APPNAME=ninvim
