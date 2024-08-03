@@ -7,7 +7,7 @@ You'll need to install Homebrew, instructions for how to do so can be found [her
 ### preface
 - Istrunctions here are for Ubuntu, they may vary slightly depending on your distribution.
 ### steps
-1. #### install neovim & configuration dependencies
+1. #### install Neovim & configuration dependencies
     - ```bash
       sudo apt install neovim curl llvm clang zip fuse ripgrep -y
       ```
@@ -19,11 +19,30 @@ You'll need to install Homebrew, instructions for how to do so can be found [her
       nvm install lts/*
       nvm use lts/*
       ```
-2. ### create Neovim config directory
+2. ### create the Neovim config's parent directory
     - ```bash
-
       mkdir -p ~/.config
       ```
+3. ### git clone this repository into the Neovim config's parent directory
+    - #### as the primary configuration
+        - https
+            - ```bash
+              git clone https://github.com/ninbura/nvim ~/appdata/local/nvim
+              ```
+        - ssh
+            - ```bash
+              git clone git@github.com:ninbura/nvim.git ~/appdata/local/nvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
+              ```
+    - #### as an additional configuration
+        - see [changing configurations](#changing-configurations)
+        - https
+            - ```bash
+              git clone https://github.com/ninbura/nvim ~/appdata/local/ninvim
+              ```
+        - ssh
+            - ```bash
+              git clone git@github.com:ninbura/nvim.git ~/appdata/local/ninvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
+              ```
 ### notes
 - Neovim's data folder can be found at the following location.
     - ```bash
@@ -71,36 +90,26 @@ winget install microsoft.powershell
       nvm install lts
       nvm use lts
       ```
-2. ### create and or navigate to the Neovim config directory
-        - ```powershell
-          # nvim-data folder in same directory
-          cd ~/appdata/local
-          ```
-    - #### linux
-        - ```bash
-          # nvim-data folder - ~/.local/share/
-          mkdir -p ~/.config && cd ~/.config
-          ```
-4. ### git clone this repository
+2. ### git clone this repository into the Neovim config's parent directory
     - #### as the primary configuration
-        - ```powershell
-          # https
-          git clone https://github.com/ninbura/nvim
-          ```
-        - ```powershell
-          # ssh
-          git clone git@github.com:ninbura/nvim.git --config user.name=ninbura --config user.email=gabriel@ninbura.com
-          ```
+        - https
+            - ```PowerShell
+              git clone https://github.com/ninbura/nvim ~/appdata/local/nvim
+              ```
+        - ssh
+            - ```PowerShell
+              git clone git@github.com:ninbura/nvim.git ~/appdata/local/nvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
+              ```
     - #### as an additional configuration
-        - ```powershell
-          # https
-          git clone https://github.com/ninbura/nvim ninvim
-          ```
-        - ```powershell
-          # ssh
-          git clone git@github.com:ninbura/nvim.git ninvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
-          ```
         - see [changing configurations](#changing-configurations)
+        - https
+            - ```PowerShell
+              git clone https://github.com/ninbura/nvim ~/appdata/local/ninvim
+              ```
+        - ssh
+            - ```PowerShell
+              git clone git@github.com:ninbura/nvim.git ~/appdata/local/ninvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
+              ```
 5. ### open neovim, wait for lazy to install plugins, & quit
     - `nvim`
     - allow Lazy time to install plugins
