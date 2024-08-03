@@ -10,19 +10,29 @@
       ```
 ### steps
 1. install Homebrew via [these insructions](https://docs.brew.sh/Installation)
-2. #### install Neovim & configuration dependencies
+2. #### create user config directory
+    - ```Zsh
+      mkdir ~/.config
+      ```
+3. #### install Neovim & configuration dependencies
     - ```Zsh
       brew install neovim ripgrep nvm
       ```
+4. configure nvm
+    - ```Zsh
+      mkdir ~/.nvm && touch ~/.profile
+      ```
+    - add the following entries to `~/.profile`
+        - ```Zsh
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+          [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+          ```
     - ```Zsh
       nvm install lts/*
       nvm use lts/*
       ```
-3. #### create the Neovim config directory's parent directory
-    - ```Zsh
-      mkdir ~/.config
-      ```
-4. #### git clone this repository into the relevant location
+6. #### git clone this repository into the relevant location
     - as the primary configuration
         - https
             - ```Zsh
@@ -42,7 +52,7 @@
             - ```Zsh
               git clone git@github.com:ninbura/nvim.git ~/.config/ninvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
               ```
-5. #### Open neovim, wait for lazy to install plugins, & quit.
+7. #### Open neovim, wait for lazy to install plugins, & quit.
     - ```Zsh
       nvim
       ```
@@ -51,7 +61,7 @@
     - ```Zsh
       :q
       ```
-6. #### intialize github copilot & rosyln if desired
+8. #### intialize github copilot & rosyln if desired
     - see [here](https://github.com/jmederosalvarado/roslyn.nvim/issues/4#issuecomment-1859198818) if you're trying to initialize the Roslyn server with dotnet != 7
     - run the following commands in Neovim
     - ```
@@ -72,7 +82,11 @@
       ```
 - These instructions are structured around Ubuntu, they will vary depending on your choice of Linux distrobution.
 ### steps
-1. #### install Neovim & configuration dependencies
+1. #### create user config directory
+    - ```Bash
+      mkdir ~/.config
+      ```
+2. #### install Neovim & configuration dependencies
     - ```Bash
       sudo apt install neovim curl llvm clang zip fuse ripgrep -y
       ```
@@ -83,10 +97,6 @@
     - ```Bash
       nvm install lts/*
       nvm use lts/*
-      ```
-2. #### create the Neovim config directory's parent directory
-    - ```Bash
-      mkdir ~/.config
       ```
 3. #### git clone this repository into the relevant location
     - as the primary configuration
