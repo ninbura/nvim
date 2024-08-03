@@ -70,16 +70,14 @@
       ```
     - note that you may have to run `:q` twice due to lazy's popup window
 5. #### intialize github copilot & rosyln if desired
+    - see [here](https://github.com/jmederosalvarado/roslyn.nvim/issues/4#issuecomment-1859198818) if you're trying to initialize the Roslyn server with dotnet != 7
     - run the following commands in Neovim
-    - copilot
-        - ```
-          :Copilot setup
-          ```
-    - roslyn
-        - See [here](https://github.com/jmederosalvarado/roslyn.nvim/issues/4#issuecomment-1859198818) if you're trying to initialize the Roslyn server with dotnet != 7.
-        - ```
-          :CSInstallRoslyn
-          ```
+    - ```
+      :Copilot setup
+      ```
+    - ```
+      :CSInstallRoslyn
+      ```
 # Windows Setup
 ### notes
 - Neovim's config directory
@@ -166,16 +164,14 @@
       ```
     - note that you may have to run `:q` twice due to lazy's popup window
 5. #### intialize github copilot & rosyln if desired
+    - see [here](https://github.com/jmederosalvarado/roslyn.nvim/issues/4#issuecomment-1859198818) if you're trying to initialize the Roslyn server with dotnet != 7
     - run the following commands in Neovim
-    - copilot
-        - ```
-          :Copilot setup
-          ```
-    - roslyn
-        - See [here](https://github.com/jmederosalvarado/roslyn.nvim/issues/4#issuecomment-1859198818) if you're trying to initialize the Roslyn server with dotnet != 7.
-        - ```
-          :CSInstallRoslyn
-          ```
+    - ```
+      :Copilot setup
+      ```
+    - ```
+      :CSInstallRoslyn
+      ```
 # changing configurations
 - ### notes
     - To change configurations on the fly, simply rename you your nvim configuration folder & set the `NVIM_APPNAME` environment variable accordingly.
