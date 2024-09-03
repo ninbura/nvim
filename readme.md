@@ -176,7 +176,7 @@
       winget install Neovim.Neovim Git.Git LLVM.LLVM CoreyButler.NVMforwindows BurntSushi.ripgrep.GNU --accept-package-agreements --accept-source-agreements
       ```
     - ```PowerShell
-      git clone https://github.com/ninbura/diff.git c:/users/$env:username/documents/diff
+      git clone https://github.com/ninbura/diff.git ~/documents/diff
       ``` 
     - ```PowerShell
       $relevantDirectories = @("C:\Program Files\LLVM\bin", "C:\Users\$env:username\Documents\diff")
