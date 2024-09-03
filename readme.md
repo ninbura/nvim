@@ -254,6 +254,10 @@
                   ~/.profile
                   ``` 
     - #### Windows
+        - ephemeral
+            - ```PowerShell
+              $env:NVIM_APPNAME = ninvim
+              ```
         - persistent 
             - ```PowerShell
               # persistent
@@ -261,8 +265,4 @@
               
               [System.Environment]::SetEnvironmentVariable("NVIM_APPNAME", $nvimAppName, "Machine")
               $env:NVIM_APPNAME = $nvimAppName
-              ```
-        - ephemeral
-            - ```PowerShell
-              $env:NVIM_APPNAME = ninvim
               ```
