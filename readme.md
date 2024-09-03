@@ -83,7 +83,7 @@
     - ```Bash
       ~/.local/share/nvim-data
       ```
-- These instructions are structured around Ubuntu, they will vary depending on your choice of Linux distrobution.
+- These instructions are structured around Ubuntu, they will vary depending on your choice of Linux distribution.
 ### steps
 1. #### create user config directory
     - ```Bash
