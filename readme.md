@@ -192,8 +192,8 @@
       }
       ```
     - ```powershell
-      nvm install --lts
-      nvm use "lts/*"
+      nvm install lts
+      nvm use lts
       ```
 3. #### git clone this repository into the relevant location
     - ##### as the primary configuration
