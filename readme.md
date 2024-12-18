@@ -91,7 +91,7 @@
       ```
 2. #### install Neovim & configuration dependencies
     - ```Bash
-      sudo apt install neovim curl llvm clang zip fuse ripgrep -y
+      sudo apt install git neovim curl llvm clang zip fuse ripgrep -y
       ```
     - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
     - ```Bash
@@ -173,7 +173,7 @@
           winget install Microsoft.VisualStudio.2022.Community --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
           ```
     - ```PowerShell
-      winget install Neovim.Neovim Git.Git LLVM.LLVM CoreyButler.NVMforwindows BurntSushi.ripgrep.GNU --accept-package-agreements --accept-source-agreements
+      winget install Git.Git Neovim.Neovim LLVM.LLVM CoreyButler.NVMforwindows BurntSushi.ripgrep.GNU --accept-package-agreements --accept-source-agreements
       ```
     - ```PowerShell
       git clone https://github.com/ninbura/diff.git /Users/$env:username/Documents/diff
