@@ -25,9 +25,6 @@ vim.keymap.set("n", "<leader><leader>", function() vim.cmd("so") end, { desc = "
 vim.keymap.set("n", "<leader>pv", "<C-w>v<C-w>l", { desc = "split window vertically and move to new split" })
 vim.keymap.set("n", "<leader>ph", "<C-w>s<C-w>j", { desc = "split window horizontally and move to new split" })
 
-vim.keymap.set("n", "<leader>cc", ":CopilotChatOpen<CR>", { desc = "open copilot chat" })
-vim.keymap.set("n", "<leader>cq", ":CopilotChatClose<CR>", { desc = "close copilot chat" })
-
 for i = 1, 9 do
   vim.api.nvim_set_keymap('n', '<leader>p'..i, ':'..i..'wincmd w<CR>', { desc = "move to window " .. i })
 end
