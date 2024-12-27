@@ -18,24 +18,24 @@
     - ```Zsh
       brew install neovim ripgrep nvm
       ```
-4. configure nvm
+4. #### configure nvm
     - ```Zsh
       mkdir ~/.nvm && touch ~/.profile
       ```
-    - add the following entries to `~/.profile`
+    - add the following entries to `~/.zprofile`
         - ```Zsh
           export NVM_DIR="$HOME/.nvm"
-          [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-          [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+          [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+          [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
           ```
     - ```Zsh
-      source ~/.profile
+      source ~/.zprofile
       ```
     - ```Zsh
       nvm install --lts
-      nvm use "lts/*"
+      nvm use --lts
       ```
-6. #### git clone this repository into the relevant location
+5. #### git clone this repository into the relevant location
     - as the primary configuration
         - https
             - ```Zsh
@@ -55,7 +55,7 @@
             - ```Zsh
               git clone git@github.com:ninbura/nvim.git ~/.config/ninvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
               ```
-7. #### Open neovim, wait for lazy to install plugins, & quit.
+6. #### Open neovim, wait for lazy to install plugins, & quit.
     - ```Zsh
       nvim
       ```
@@ -64,15 +64,11 @@
     - ```Zsh
       :q
       ```
-8. #### intialize github copilot & rosyln if desired
-    - see [here](https://github.com/jmederosalvarado/roslyn.nvim/issues/4#issuecomment-1859198818) if you're trying to initialize the Roslyn server with dotnet != 7
-    - run the following commands in Neovim
+7. #### intialize github copilot desired
+    - run the following command in Neovim
     - ```
       :Copilot setup
-      ```
-    - ```
-      :CSInstallRoslyn
-      ```     
+      ``` 
 # Linux setup
 ### notes
 - Neovim's config directory
@@ -93,15 +89,17 @@
     - ```Bash
       sudo apt install git neovim curl llvm clang zip fuse ripgrep -y
       ```
-    - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
     - ```Bash
       source ~/.bashrc
       ```
+3. #### install & configure nvm
+    - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
+    - After completing the instructions above, run the following commands.
     - ```Bash
       nvm install --lts
-      nvm use "lts/*"
+      nvm use --lts
       ```
-3. #### git clone this repository into the relevant location
+4. #### git clone this repository into the relevant location
     - as the primary configuration
         - https
             - ```Bash
@@ -121,7 +119,7 @@
             - ```Bash
               git clone git@github.com:ninbura/nvim.git ~/.config/ninvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
               ```
-4. #### Open neovim, wait for lazy to install plugins, & quit.
+5. #### Open neovim, wait for lazy to install plugins, & quit.
     - ```Bash
       nvim
       ```
@@ -131,14 +129,10 @@
       :q
       ```
     - note that you may have to run `:q` twice due to lazy's popup window
-5. #### intialize github copilot & rosyln if desired
-    - see [here](https://github.com/jmederosalvarado/roslyn.nvim/issues/4#issuecomment-1859198818) if you're trying to initialize the Roslyn server with dotnet != 7
-    - run the following commands in Neovim
+6. #### intialize github copilot if desired
+    - run the following command while in Neovim
     - ```
       :Copilot setup
-      ```
-    - ```
-      :CSInstallRoslyn
       ```
 # Windows Setup
 ### notes
@@ -225,14 +219,10 @@
       :q
       ```
     - note that you may have to run `:q` twice due to lazy's popup window
-5. #### intialize github copilot & rosyln if desired
-    - see [here](https://github.com/jmederosalvarado/roslyn.nvim/issues/4#issuecomment-1859198818) if you're trying to initialize the Roslyn server with dotnet != 7
-    - run the following commands in Neovim
+5. #### intialize github copilot if desired
+    - run the following command while in Neovim
     - ```
       :Copilot setup
-      ```
-    - ```
-      :CSInstallRoslyn
       ```
 # changing configurations
 - ### notes
