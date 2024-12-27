@@ -1,6 +1,6 @@
 return {
   "VonHeikemen/lsp-zero.nvim",
-  branch = "v3.x",
+  branch = "v4.x",
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
     "williamboman/mason.nvim",
@@ -30,15 +30,15 @@ return {
       -- Replace the language servers listed here 
       -- with the ones you want to install
       ensure_installed = {
-        "tsserver",
-        "rust_analyzer",
+        "docker_compose_language_service",
+        "dockerls",
         "eslint",
         "lua_ls",
-        "dockerls",
-        "docker_compose_language_service",
         "powershell_es",
         "sqlls",
-        "tailwindcss"
+        "rust_analyzer",
+        "tailwindcss",
+        "ts_ls",
       },
       handlers = {
         lsp_zero.default_setup,
