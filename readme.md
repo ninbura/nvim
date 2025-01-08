@@ -1,7 +1,7 @@
 # table of contents
 - [macOS setup](#macOS-setup)
-- [Linux setup](#macOS-setup)
-- [Windows setup](#macOS-setup)
+- [Linux setup](#Linux-setup)
+- [Windows setup](#Windows-setup)
 - [changing configurations](#changing-configurations)
 
 # macOS setup
