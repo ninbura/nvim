@@ -1,3 +1,9 @@
+# table of contents
+- [macOS setup](#macOS-setup)
+- [Linux setup](#macOS-setup)
+- [Windows setup](#macOS-setup)
+- [changing configurations](#changing-configurations)
+
 # macOS setup
 ### notes
 - Neovim's config directory
