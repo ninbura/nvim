@@ -156,15 +156,13 @@
       ```
 ### steps
 1. #### enable running PowerShell scripts
-    - requires elevated shell
-        - ```PowerShell
-          Set-ExecutionPolicy RemoteSigned
-          ```
+    - ```PowerShell
+      sudo Set-ExecutionPolicy RemoteSigned
+      ```
 2. #### install Neovim & configuration dependencies
-    - requires elevated shell
-        - ```PowerShell
-          winget install jazzdelightsme.WingetPathUpdater
-          ```
+    - ```PowerShell
+      sudo winget install jazzdelightsme.WingetPathUpdater
+      ```
     - Pick one of the following Visual Studio installs, note that professional is paid & community is free.
         - ```PowerShell
           winget install Microsoft.VisualStudio.2022.Professional --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
