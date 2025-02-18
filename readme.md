@@ -152,7 +152,7 @@
       ```
 - If you're not using PowerShell 7, I will cry.
     - ```PowerShell
-      winget install microsoft.powershell
+      winget install Microsoft.PowerShell
       ```
 ### steps
 1. #### enable running PowerShell scripts
