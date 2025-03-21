@@ -95,9 +95,10 @@
     - ```Bash
       sudo apt install git neovim curl llvm clang zip fuse ripgrep -y
       ```
-    - ```Bash
-      source ~/.bashrc
-      ```
+    # this breaks sometimes, just log out and back in.
+    # - ```Bash
+    #  source ~/.bashrc
+    #  ```
 3. #### install & configure nvm
     - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
     - After completing the instructions above, run the following commands.
