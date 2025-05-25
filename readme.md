@@ -26,7 +26,7 @@
       ```
 4. #### configure nvm
     - ```Zsh
-      mkdir ~/.nvm && touch ~/.profile
+      mkdir ~/.nvm && touch ~/.zprofile
       ```
     - add the following entries to `~/.zprofile`
         - ```Zsh
