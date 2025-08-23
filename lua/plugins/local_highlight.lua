@@ -1,5 +1,5 @@
 return {
-  "armin-ahmed/local-highlight.nvim",
+  "tzachar/local-highlight.nvim",
   dependencies = { "folke/snacks.nvim" },
   opts = {},
 }
