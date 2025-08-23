@@ -198,7 +198,7 @@
               ```
         - ssh
             - ```PowerShell
-              git clone git@github.com:ninbura/nvim.git /Users/$env:username/appdata/local/nvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
+              git clone git@github.com:ninbura/nvim.git /Users/$env:username/appdata/local/nvim --config user.name=ninbura --config user.email="58058942+ninbura@users.noreply.github.com"
               ```
     - ##### as an additional configuration
         - see [changing configurations](#changing-configurations)
@@ -208,7 +208,7 @@
               ```
         - ssh
             - ```PowerShell
-              git clone git@github.com:ninbura/nvim.git /Users/$env:username/appdata/local/ninvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
+              git clone git@github.com:ninbura/nvim.git /Users/$env:username/appdata/local/ninvim --config user.name=ninbura --config user.email="58058942+ninbura@users.noreply.github.com"
               ```
 4. #### Open neovim, wait for lazy to install plugins, & quit.
     - ```PowerShell
