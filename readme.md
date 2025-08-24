@@ -96,19 +96,27 @@
       sudo apt install git curl llvm clang zip fuse ripgrep -y
       ```
 3. #### install or update to the latest version of Neovim
-    1. run one of the following commands to pull down the latest version of neovim
-        - Arm64
-            - ```Bash
-              curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-arm64.tar.gz
-              sudo rm -rf /opt/nvim
-              sudo tar -C /opt -xzf nvim-linux-arm64.tar.gz
-              ```
-       - x86
-           - ```Bash
-             curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
-             sudo rm -rf /opt/nvim
-             sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
-             ```
+    1. run the following commands to pull the latest stable Neovim binary
+        - ```
+          arch=$(uname -m)
+            
+          if [ "$arch" = "x86_64" ]; then
+              url="https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz"
+              file=~/nvim-linux-x86_64.tar.gz
+              echo "Detected architecture: $arch (x86_64) — using $url"
+          elif [ "$arch" = "aarch64" ] || [ "$arch" = "arm64" ]; then
+              url="https://github.com/neovim/neovim/releases/latest/download/nvim-linux-arm64.tar.gz"
+              file=~/nvim-linux-arm64.tar.gz
+              echo "Detected architecture: $arch (ARM64) — using $url"
+          else
+              echo "Unsupported architecture: $arch"
+              exit 1
+          fi
+            
+          curl -Lo "$file" "$url"
+          sudo rm -rf /opt/nvim
+          sudo tar -C /opt -xzf "$file" --one-top-level=nvim --strip-components=1
+          ```
     2. add the binary to your path
         - run the following command to open your `~/.profile` for editing
             - ```
