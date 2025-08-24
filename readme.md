@@ -118,7 +118,7 @@
             - ```
               export PATH="/opt/nvim/bin:$PATH"
               ```
-        - Hit `ctrl+O` to start the save process, hit `enter` to confirm, and `ctrl+x` to exit.
+        - Hit `ctrl+x` to exit, hit `y` to confirm you want to save changes, and then `enter` to save over the existing file.
 4. #### install & configure nvm
     - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
     - make sure you add the necessary lines to your `~/.profile` as the instructions state in your terminal after following the above instructions
