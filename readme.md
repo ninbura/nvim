@@ -83,7 +83,7 @@
       ```
 - Neovim's data directory
     - ```Bash
-      ~/.local/share/nvim-data
+      ~/.local/share/nvim
       ```
 - These instructions are structured around Ubuntu, they will vary depending on your choice of Linux distribution.
 ### steps
@@ -91,18 +91,49 @@
     - ```Bash
       mkdir ~/.config
       ```
-2. #### install Neovim & configuration dependencies
+3. #### install Neovim & configuration dependencies
     - ```Bash
-      sudo apt install git neovim curl llvm clang zip fuse ripgrep -y
+      sudo apt install git curl llvm clang zip fuse ripgrep -y
       ```
-3. #### install & configure nvm
+3. #### install or update to the latest version of Neovim
+    1. run one of the following commands to pull down the latest version of neovim
+        - Arm64
+            - ```Bash
+              curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-arm64.tar.gz
+              sudo rm -rf /opt/nvim
+              sudo tar -C /opt -xzf nvim-linux-arm64.tar.gz
+              ```
+       - x86
+           - ```Bash
+             curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+             sudo rm -rf /opt/nvim
+             sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+             ```
+    2. add the binary to your path
+        - run the following command to open your `~/.profile` for editing
+            - ```
+              nano ~/.profile
+              ```
+        - append the following to the bottom of the file
+            - ```
+              export PATH="/opt/nvim/bin:$PATH"
+              ```
+        - Hit `ctrl+O` to start the save process, hit `enter` to confirm, and `ctrl+x` to exit.
+4. #### install & configure nvm
     - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
+    - make sure you add the necessary lines to your `~/.profile` as the instructions state in your terminal after following the above instructions
+        - Use nano just like the second half in the last step.
+        - ```
+          nano ~/.profile
+          ```
     - After completing the instructions above, run the following commands.
     - ```Bash
       nvm install --lts
       nvm use --lts
       ```
-4. #### git clone this repository into the relevant location
+5. restart your computer
+   - You could techincally get away with sourcing your `~/.profile` but I consistently have issues with this... I restart 
+5. #### git clone this repository into the relevant location
     - as the primary configuration
         - https
             - ```Bash
@@ -122,7 +153,7 @@
             - ```Bash
               git clone git@github.com:ninbura/nvim.git ~/.config/ninvim --config user.name=ninbura --config user.email="58058942+ninbura@users.noreply.github.com"
               ```
-5. #### Open neovim, wait for lazy to install plugins, & quit.
+6. #### Open neovim, wait for lazy to install plugins, & quit.
     - ```Bash
       nvim
       ```
@@ -132,7 +163,7 @@
       :q
       ```
     - note that you may have to run `:q` twice due to lazy's popup window
-6. #### intialize github copilot if desired
+7. #### intialize github copilot if desired
     - run the following command while in Neovim
     - ```
       :Copilot setup
