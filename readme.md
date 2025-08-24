@@ -126,14 +126,14 @@
         - ```
           nano ~/.profile
           ```
-    - After completing the instructions above, run the following commands.
+5. restart your computer
+   - You could techincally get away with sourcing your `~/.profile` but I consistently have issues with this... so I restart.
+6. configure nvm
     - ```Bash
       nvm install --lts
       nvm use --lts
       ```
-5. restart your computer
-   - You could techincally get away with sourcing your `~/.profile` but I consistently have issues with this... I restart 
-5. #### git clone this repository into the relevant location
+7. #### git clone this repository into the relevant location
     - as the primary configuration
         - https
             - ```Bash
@@ -153,7 +153,7 @@
             - ```Bash
               git clone git@github.com:ninbura/nvim.git ~/.config/ninvim --config user.name=ninbura --config user.email="58058942+ninbura@users.noreply.github.com"
               ```
-6. #### Open neovim, wait for lazy to install plugins, & quit.
+8. #### Open neovim, wait for lazy to install plugins, & quit.
     - ```Bash
       nvim
       ```
@@ -163,7 +163,7 @@
       :q
       ```
     - note that you may have to run `:q` twice due to lazy's popup window
-7. #### intialize github copilot if desired
+9. #### intialize github copilot if desired
     - run the following command while in Neovim
     - ```
       :Copilot setup
