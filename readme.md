@@ -127,16 +127,16 @@
               export PATH="/opt/nvim/bin:$PATH"
               ```
         - Hit `ctrl+x` to exit, hit `y` to confirm you want to save changes, and then `enter` to save over the existing file.
-4. #### install & configure nvm
+4. #### install nvm
     - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
     - make sure you add the necessary lines to your `~/.profile` as the instructions state in your terminal after following the above instructions
-        - Use nano just like the second half in the last step.
+        - use nano just like in the second half of step 3
         - ```Bash
           nano ~/.profile
           ```
-5. restart your computer
+5. #### restart your computer
    - You could techincally get away with sourcing your `~/.profile` but I consistently have issues with this... so I restart.
-6. configure nvm
+6. #### configure nvm
     - ```Bash
       nvm install --lts
       nvm use --lts
