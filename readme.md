@@ -97,7 +97,7 @@
       ```
 3. #### install or update to the latest version of Neovim
     1. run the following commands to pull the latest stable Neovim binary
-        - ```
+        - ```Bash
           arch=$(uname -m)
             
           if [ "$arch" = "x86_64" ]; then
@@ -119,11 +119,11 @@
           ```
     2. add the binary to your path
         - run the following command to open your `~/.profile` for editing
-            - ```
+            - ```Bash
               nano ~/.profile
               ```
         - append the following to the bottom of the file
-            - ```
+            - ```Bash
               export PATH="/opt/nvim/bin:$PATH"
               ```
         - Hit `ctrl+x` to exit, hit `y` to confirm you want to save changes, and then `enter` to save over the existing file.
@@ -131,7 +131,7 @@
     - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
     - make sure you add the necessary lines to your `~/.profile` as the instructions state in your terminal after following the above instructions
         - Use nano just like the second half in the last step.
-        - ```
+        - ```Bash
           nano ~/.profile
           ```
 5. restart your computer
