@@ -136,6 +136,8 @@
           ```
 5. #### restart your terminal emulator
    - You could techincally get away with sourcing your `~/.profile` but I consistently have issues with this... so I restart.
+   - if you're using SSH to access the computer you'll need to kill your session and reconnect
+   - restarting the PC will also work
 6. #### configure nvm
     - ```Bash
       nvm install --lts
