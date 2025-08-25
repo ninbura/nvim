@@ -134,7 +134,7 @@
         - ```Bash
           nano ~/.profile
           ```
-5. #### restart your computer
+5. #### restart your terminal emulator
    - You could techincally get away with sourcing your `~/.profile` but I consistently have issues with this... so I restart.
 6. #### configure nvm
     - ```Bash
