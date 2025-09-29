@@ -3,7 +3,7 @@
 - [Linux setup](#Linux-setup)
 - [Windows setup](#Windows-setup)
 - [changing configurations](#changing-configurations)
-- [update configuration](#update-configuration)
+- [update/restore configuration](#update-restore-configuration)
 
 # macOS setup
 ### notes
