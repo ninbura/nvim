@@ -317,5 +317,5 @@
           ```
     - #### restore
         - ```PowerShell
-          Remove-Item -Path ~\AppData\Local\nvim-data -Recurse -Force
+          Remove-Item -Path ~/AppData/Local/nvim-data -Recurse -Force
           ```
