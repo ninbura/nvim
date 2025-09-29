@@ -3,6 +3,7 @@
 - [Linux setup](#Linux-setup)
 - [Windows setup](#Windows-setup)
 - [changing configurations](#changing-configurations)
+- [update configuration](#update-configuration)
 
 # macOS setup
 ### notes
@@ -12,7 +13,7 @@
       ```
 - Neovim's data directory
     - ```Zsh
-      ~/.local/share/nvim-data
+      ~/.local/share/nvim
       ```
 ### steps
 1. install Homebrew via [these insructions](https://docs.brew.sh/Installation)
@@ -296,3 +297,26 @@
               [System.Environment]::SetEnvironmentVariable("NVIM_APPNAME", $nvimAppName, "Machine")
               $env:NVIM_APPNAME = $nvimAppName
               ```
+# update/restore configuration
+- ### notes
+    - Sometimes after updating you'll have cached configuration files that break plugins and such.
+    - Restore = deleting the data folder.
+    - Restoring will wipe out your undo changes cached by undo tree.
+- ### macOS & Linux
+    - #### update
+        - ```zsh
+          git -C ~/.config/nvim pull
+          ```
+    - #### restore
+        - ```zsh
+          rm -rf ~/.local/share/nvim
+          ```
+- ### Windows
+    - #### update
+        - ```PowerShell
+          git -C ~/appdata/local/nvim pull
+          ```
+    - #### restore
+        - ```PowerShell
+          Remove-Item -Path "~\AppData\Local\nvim-data" -Recurse -Force
+          ```
