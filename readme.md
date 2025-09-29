@@ -300,7 +300,7 @@
 - ### notes
     - Sometimes after updating you'll have cached configuration files that break plugins and such.
     - Restore = deleting the data folder.
-    - Restoring will wipe out your undo changes cached by undo tree.
+    - Restoring will wipe out your undo changes cached by undotree.
 - ### macOS & Linux
     - #### update
         - ```zsh
