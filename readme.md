@@ -181,11 +181,11 @@
 ### notes
 - Neovim's config directory
     - ```Bash
-      ~/appdata/local/nvim
+      ~/AppData/Local/nvim
       ```
 - Neovim's data directory
     - ```Bash
-      ~/appdata/local/nvim-data
+      ~/AppData/Local/nvim-data
       ```
 - If you're not using PowerShell 7, I will cry.
     - ```PowerShell
@@ -197,39 +197,38 @@
       sudo Set-ExecutionPolicy RemoteSigned
       ```
 2. #### install Neovim & configuration dependencies
-    - ```PowerShell
-      sudo winget install jazzdelightsme.WingetPathUpdater
-      ```
-    - Pick one of the following Visual Studio installs, note that professional is paid & community is free.
+    1. install dependencies     
+        - Pick one of the following Visual Studio installs, note that professional is paid & community is free.
+            - ```PowerShell
+              winget install Microsoft.VisualStudio.2022.Professional --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
+              ```
+            - ```PowerShell
+              winget install Microsoft.VisualStudio.2022.Community --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
+              ```
         - ```PowerShell
-          winget install Microsoft.VisualStudio.2022.Professional --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
+          winget install Git.Git Neovim.Neovim LLVM.LLVM CoreyButler.NVMforwindows BurntSushi.ripgrep.GNU --accept-package-agreements --accept-source-agreements
           ```
         - ```PowerShell
-          winget install Microsoft.VisualStudio.2022.Community --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
+          git clone https://github.com/ninbura/diff.git /Users/$env:username/Documents/diff
           ```
-    - ```PowerShell
-      winget install Git.Git Neovim.Neovim LLVM.LLVM CoreyButler.NVMforwindows BurntSushi.ripgrep.GNU --accept-package-agreements --accept-source-agreements
-      ```
-    - ```PowerShell
-      git clone https://github.com/ninbura/diff.git /Users/$env:username/Documents/diff
-      ``` 
-    - ```PowerShell
-      $relevantDirectories = @("C:\Program Files\LLVM\bin", "C:\Users\$env:username\Documents\diff")
-      $machineAndUserPath = ([Environment]::GetEnvironmentVariable("Path"))
-
-      foreach($directory in $relevantDirectories) {
-          if($machineAndUserPath -notmatch $directory.replace("\", "\\")) {
-              $splitPath = [Environment]::GetEnvironmentVariable("Path", "Machine").Split(";")
-              $newPath = ($splitPath + $directory) -Join ";"
-              [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
-              $env:Path = [System.Environment]::GetEnvironmentVariable("Path")
+    2. restart your terminal session and then run the following commands
+        - ```PowerShell
+          $relevantDirectories = @("C:\Program Files\LLVM\bin", "C:\Users\$env:username\Documents\diff")
+          $machineAndUserPath = ([Environment]::GetEnvironmentVariable("Path"))
+    
+          foreach($directory in $relevantDirectories) {
+              if($machineAndUserPath -notmatch $directory.replace("\", "\\")) {
+                  $splitPath = [Environment]::GetEnvironmentVariable("Path", "Machine").Split(";")
+                  $newPath = ($splitPath + $directory) -Join ";"
+                  [Environment]::SetEnvironmentVariable("Path", $newPath, [EnvironmentVariableTarget]::Machine)
+                  $env:Path = [System.Environment]::GetEnvironmentVariable("Path")
+              }
           }
-      }
-      ```
-    - ```powershell
-      nvm install lts
-      nvm use lts
-      ```
+          ```
+        - ```powershell
+          nvm install lts
+          nvm use lts
+          ```
 3. #### git clone this repository into the relevant location
     - ##### as the primary configuration
         - https
