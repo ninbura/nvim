@@ -234,21 +234,21 @@
     - ##### as the primary configuration
         - https
             - ```PowerShell
-              git clone https://github.com/ninbura/nvim /Users/$env:username/appdata/local/nvim
+              git clone https://github.com/ninbura/nvim $HOME/AppData/Local/nvim
               ```
         - ssh
             - ```PowerShell
-              git clone git@github.com:ninbura/nvim.git /Users/$env:username/appdata/local/nvim --config user.name=ninbura --config user.email="58058942+ninbura@users.noreply.github.com"
+              git clone git@github.com:ninbura/nvim.git $HOME/AppData/Local/nvim --config user.name=ninbura --config user.email="58058942+ninbura@users.noreply.github.com"
               ```
     - ##### as an additional configuration
         - see [changing configurations](#changing-configurations)
         - https
             - ```PowerShell
-              git clone https://github.com/ninbura/nvim /Users/$env:username/appdata/local/ninvim
+              git clone https://github.com/ninbura/nvim $HOME/AppData/Local/ninvim
               ```
         - ssh
             - ```PowerShell
-              git clone git@github.com:ninbura/nvim.git /Users/$env:username/appdata/local/ninvim --config user.name=ninbura --config user.email="58058942+ninbura@users.noreply.github.com"
+              git clone git@github.com:ninbura/nvim.git $HOME/AppData/Local/ninvim --config user.name=ninbura --config user.email="58058942+ninbura@users.noreply.github.com"
               ```
 4. #### Open neovim, wait for lazy to install plugins, & quit.
     - ```PowerShell
@@ -314,9 +314,9 @@
 - ### Windows
     - #### update
         - ```PowerShell
-          git -C ~/appdata/local/nvim pull
+          git -C $HOME/AppData/Local/nvim pull
           ```
     - #### restore
         - ```PowerShell
-          Remove-Item -Path "~\AppData\Local\nvim-data" -Recurse -Force
+          Remove-Item -Path ~\AppData\Local\nvim-data -Recurse -Force
           ```
