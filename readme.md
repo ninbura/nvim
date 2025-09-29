@@ -298,9 +298,9 @@
               ```
 # update/restore configuration
 - ### notes
-    - Sometimes after updating you'll have cached configuration files that break plugins and such.
-    - Restore = deleting the data folder.
-    - Restoring will wipe out your undo changes cached by undotree.
+    - sometimes after updating you'll have cached configuration files that break plugins and such
+    - restore = deleting the data folder
+    - restoring will wipe out your undo changes cached by undotree
 - ### macOS & Linux
     - #### update
         - ```zsh
