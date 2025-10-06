@@ -209,11 +209,11 @@
           winget install Git.Git Neovim.Neovim LLVM.LLVM CoreyButler.NVMforwindows BurntSushi.ripgrep.GNU --accept-package-agreements --accept-source-agreements
           ```
         - ```PowerShell
-          git clone https://github.com/ninbura/diff.git /Users/$env:username/Documents/diff
+          git clone https://github.com/ninbura/diff.git $HOME/Documents/diff
           ```
     2. restart your terminal session and then run the following commands
         - ```PowerShell
-          $relevantDirectories = @("C:\Program Files\LLVM\bin", "C:\Users\$env:username\Documents\diff")
+          $relevantDirectories = @("C:\Program Files\LLVM\bin", "$HOME\Documents\diff")
           $machineAndUserPath = ([Environment]::GetEnvironmentVariable("Path"))
     
           foreach($directory in $relevantDirectories) {
