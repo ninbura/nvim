@@ -211,7 +211,6 @@
         - ```PowerShell
           git clone https://github.com/ninbura/diff.git $HOME/Documents/diff
           ```
-    2. restart your terminal session and then run the following commands
         - ```PowerShell
           $relevantDirectories = @("C:\Program Files\LLVM\bin", "$HOME\Documents\diff")
           $machineAndUserPath = ([Environment]::GetEnvironmentVariable("Path"))
@@ -225,6 +224,7 @@
               }
           }
           ```
+    2. restart your terminal session and then run the following commands
         - ```powershell
           nvm install lts
           nvm use lts
