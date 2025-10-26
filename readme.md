@@ -50,7 +50,11 @@
               ```
         - ssh
             - ```Zsh
-              git clone git@github.com:ninbura/nvim.git ~/.config/nvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
+              git clone git@github.com:ninbura/nvim.git ~/.config/nvim
+              ```
+        - for me !!!
+            - ```Zsh
+              git clone git@github.com:ninbura/nvim.git ~/.config/nvim --config user.name=ninbura --config user.email="58058942+ninbura@users.noreply.github.com"
               ```
     - as an additional configuration
         - see [changing configurations](#changing-configurations)
@@ -60,7 +64,7 @@
               ```
         - ssh
             - ```Zsh
-              git clone git@github.com:ninbura/nvim.git ~/.config/ninvim --config user.name=ninbura --config user.email=gabriel@ninbura.com
+              git clone git@github.com:ninbura/nvim.git ~/.config/ninvim --config user.name=ninbura --config user.email="58058942+ninbura@users.noreply.github.com"
               ```
 6. #### Open neovim, wait for lazy to install plugins, & quit.
     - ```Zsh
@@ -150,6 +154,10 @@
               ```
         - ssh
             - ```Bash
+              git clone git@github.com:ninbura/nvim.git ~/.config/nvim
+              ```
+        - for me !!!
+            - ```Bash
               git clone git@github.com:ninbura/nvim.git ~/.config/nvim --config user.name=ninbura --config user.email="58058942+ninbura@users.noreply.github.com"
               ```
     - as an additional configuration
@@ -236,6 +244,10 @@
               git clone https://github.com/ninbura/nvim $HOME/AppData/Local/nvim
               ```
         - ssh
+            - ```PowerShell
+              git clone git@github.com:ninbura/nvim.git $HOME/AppData/Local/nvim
+              ```
+        - for me !!!
             - ```PowerShell
               git clone git@github.com:ninbura/nvim.git $HOME/AppData/Local/nvim --config user.name=ninbura --config user.email="58058942+ninbura@users.noreply.github.com"
               ```
