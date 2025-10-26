@@ -73,7 +73,7 @@
     - allow Lazy time to install plugins
     - allow Treesitter time to install parsers
     - ```Zsh
-      :q
+      :qa
       ```
 7. #### intialize github copilot desired
     - run the following command in Neovim
@@ -177,7 +177,7 @@
     - allow Lazy time to install plugins
     - allow Treesitter time to install parsers
     - ```Bash
-      :q
+      :qa
       ```
     - note that you may have to run `:q` twice due to lazy's popup window
 9. #### intialize github copilot if desired
@@ -268,9 +268,8 @@
     - allow Lazy time to install plugins
     - allow Treesitter time to install parsers
     - ```
-      :q
+      :qa
       ```
-    - note that you may have to run `:q` twice due to lazy's popup window
 5. #### intialize github copilot if desired
     - run the following command while in Neovim
     - ```
