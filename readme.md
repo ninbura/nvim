@@ -135,7 +135,7 @@
 4. #### install nvm
     - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
 5. #### restart your computer
-   - You could techincally get away with sourcing your `~/.profile` but that consistently caused in issue where my desktop environment would get uinstalled on Ubuntu... so I restart.
+   - You could techincally get away with sourcing your `~/.profile` but that consistently caused an issue for me on Ubuntu where my desktop environment would get uinstalled... so I restart.
 6. #### configure nvm
     - ```Bash
       nvm install --lts
