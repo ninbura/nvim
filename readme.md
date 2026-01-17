@@ -208,7 +208,7 @@
               winget install Microsoft.VisualStudio.Community --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
               ```
         - ```PowerShell
-          winget install Git.Git Neovim.Neovim LLVM.LLVM CoreyButler.NVMforwindows BurntSushi.ripgrep.GNU --accept-package-agreements --accept-source-agreements
+          winget install Git.Git Neovim.Neovim.Nightly LLVM.LLVM CoreyButler.NVMforwindows BurntSushi.ripgrep.GNU --accept-package-agreements --accept-source-agreements
           ```
         - ```PowerShell
           git clone https://github.com/ninbura/diff.git $HOME/Documents/diff
