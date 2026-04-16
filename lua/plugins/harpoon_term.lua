@@ -70,7 +70,7 @@ local function term_select(list_item, list, options)
   if list_item == nil then
     vim.cmd("terminal")
 
-    require("harpoon"):list("term"):append()
+    require("harpoon"):list("term"):add()
 
     return
   end
