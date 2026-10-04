@@ -31,6 +31,9 @@
       ```
     - add the following entries to `~/.zprofile`
         - ```Zsh
+          nano ~/.zprofile
+          ```
+        - ```Zsh
           export NVM_DIR="$HOME/.nvm"
           [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
           [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
