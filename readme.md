@@ -1,6 +1,7 @@
 # table of contents
 - [macOS setup](#macOS-setup)
 - [Linux setup](#Linux-setup)
+- [Omarchy setup](#Omarchy-setup)
 - [Windows setup](#Windows-setup)
 - [changing configurations](#changing-configurations)
 - [update/restore configuration](#updaterestore-configuration)
@@ -187,6 +188,43 @@
               git clone git@github.com:ninbura/nvim.git ~/.config/ninvim --config user.name=ninbura --config user.email="58058942+ninbura@users.noreply.github.com"
               ```
 8. #### Open neovim, wait for lazy to install plugins, & quit.
+    - ```Bash
+      nvim
+      ```
+    - allow Lazy time to install plugins
+    - allow Treesitter time to install parsers
+    - ```Bash
+      :qa
+      ```
+# Omarchy setup
+### notes
+- Requires Neovim 0.12 or newer.
+- [Omarchy](https://omarchy.org) is Arch Linux based and already ships most of what this config needs: Neovim (latest, via `pacman`), `git`, `curl`, `zip`, `ripgrep`, `fd`, `gcc`, the tree-sitter CLI, and Node.js + npm (managed by `mise`, so `nvm` isn't needed).
+- Omarchy also ships its own Neovim config (LazyVim with Omarchy theme integration) in `~/.config/nvim`, which has to be moved out of the way before cloning.
+- Neovim's config directory
+    - ```Bash
+      ~/.config/nvim
+      ```
+- Neovim's data directory
+    - ```Bash
+      ~/.local/share/nvim
+      ```
+### steps
+1. #### install the remaining dependencies
+    - ```Bash
+      omarchy pkg add clang llvm go
+      ```
+2. #### move Omarchy's default Neovim config aside
+    - ```Bash
+      mv ~/.config/nvim ~/.config/nvim.omarchy-default.bak
+      ```
+    - optionally clear the default config's plugin data too, so Lazy starts clean
+        - ```Bash
+          mv ~/.local/share/nvim ~/.local/share/nvim.omarchy-default.bak
+          ```
+3. #### git clone this repository into the relevant location
+    - see the [Linux setup](#Linux-setup) clone step; the commands are identical
+4. #### Open neovim, wait for lazy to install plugins, & quit.
     - ```Bash
       nvim
       ```
