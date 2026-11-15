@@ -9,16 +9,6 @@ return {
   },
   keys = {
     {
-      "<leader>lh",
-      function() require("harpoon").logger:show() end,
-      desc = "shows harpoon logger"
-    },
-    {
-      "<leader>rh",
-      function() require("lazy") vim.cmd("Lazy reload harpoon") end,
-      desc = "reloads harpoon and its configuration via lazy"
-    },
-    {
       "<leader>a",
       function() require("harpoon"):list():add() end,
       desc = "appends currently focused buffer to harpoon list"

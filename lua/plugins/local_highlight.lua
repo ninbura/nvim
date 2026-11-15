@@ -1,5 +1,5 @@
 return {
   "tzachar/local-highlight.nvim",
-  dependencies = { "folke/snacks.nvim" },
-  opts = {},
+  -- snacks.nvim is only needed for its highlight animation, which is off.
+  opts = { animate = { enabled = false } },
 }
