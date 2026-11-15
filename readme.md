@@ -7,6 +7,7 @@
 
 # macOS setup
 ### notes
+- Requires Neovim 0.12 or newer.
 - Neovim's config directory
     - ```Zsh
       ~/.config/nvim
@@ -23,7 +24,7 @@
       ```
 3. #### install Neovim & configuration dependencies
     - ```Zsh
-      brew install neovim ripgrep nvm
+      brew install neovim ripgrep nvm go tree-sitter-cli
       ```
 4. #### configure nvm
     - ```Zsh
@@ -78,13 +79,9 @@
     - ```Zsh
       :qa
       ```
-7. #### intialize github copilot desired
-    - run the following command in Neovim
-    - ```
-      :Copilot setup
-      ``` 
 # Linux setup
 ### notes
+- Requires Neovim 0.12 or newer.
 - These instructions are structured around Ubuntu, they will vary depending on your choice of Linux distribution.
 - Neovim's config directory
     - ```Bash
@@ -103,6 +100,27 @@
     - ```Bash
       sudo apt install git curl llvm clang zip fuse ripgrep -y
       ```
+    - Go (builds the `sqls` SQL language server; apt's version is too old)
+        - ```Bash
+          sudo snap install go --classic
+          ```
+    - tree-sitter CLI (builds syntax highlighting parsers; apt's version is too old)
+        - ```Bash
+          arch=$(uname -m)
+
+          if [ "$arch" = "x86_64" ]; then
+              ts_arch=x64
+          elif [ "$arch" = "aarch64" ] || [ "$arch" = "arm64" ]; then
+              ts_arch=arm64
+          else
+              echo "Unsupported architecture: $arch"
+              exit 1
+          fi
+
+          curl -Lo /tmp/tree-sitter.gz "https://github.com/tree-sitter/tree-sitter/releases/latest/download/tree-sitter-linux-$ts_arch.gz"
+          gunzip -f /tmp/tree-sitter.gz
+          sudo install -m 755 /tmp/tree-sitter /usr/local/bin/tree-sitter
+          ```
 3. #### install or update to the latest version of Neovim
     1. run the following commands to pull the latest stable Neovim binary
         - ```Bash
@@ -177,13 +195,9 @@
     - ```Bash
       :qa
       ```
-9. #### intialize github copilot if desired
-    - run the following command while in Neovim
-    - ```
-      :Copilot setup
-      ```
 # Windows Setup
 ### notes
+- Requires Neovim 0.12 or newer.
 - Neovim's config directory
     - ```Bash
       ~/AppData/Local/nvim
@@ -211,13 +225,10 @@
               winget install Microsoft.VisualStudio.Community --override "--wait --quiet --add ProductLang En-us --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended"
               ```
         - ```PowerShell
-          winget install Git.Git Neovim.Neovim.Nightly LLVM.LLVM CoreyButler.NVMforwindows BurntSushi.ripgrep.GNU --accept-package-agreements --accept-source-agreements
+          winget install Git.Git Neovim.Neovim.Nightly LLVM.LLVM CoreyButler.NVMforwindows BurntSushi.ripgrep.GNU GoLang.Go tree-sitter.tree-sitter-cli --accept-package-agreements --accept-source-agreements
           ```
         - ```PowerShell
-          git clone https://github.com/ninbura/diff.git $HOME/Documents/diff
-          ```
-        - ```PowerShell
-          $relevantDirectories = @("C:\Program Files\LLVM\bin", "$HOME\Documents\diff")
+          $relevantDirectories = @("C:\Program Files\LLVM\bin")
           $machineAndUserPath = ([Environment]::GetEnvironmentVariable("Path"))
     
           foreach($directory in $relevantDirectories) {
@@ -266,11 +277,6 @@
     - allow Treesitter time to install parsers
     - ```
       :qa
-      ```
-5. #### intialize github copilot if desired
-    - run the following command while in Neovim
-    - ```
-      :Copilot setup
       ```
 # changing configurations
 - ### notes

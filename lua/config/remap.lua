@@ -39,8 +39,18 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "move selected lines down"
 
 vim.keymap.set("v", "<leader>d", [["_d]], { desc = "delete to void register" })
 
--- terminal mode
-vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "override esc to enter normal mode" })
 
 -- wtf is x mode
-vim.keymap.set("x", "<leader>p", [["_dp]], { desc = "paste without yanking" })
+vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "paste without yanking" })
+
+-- system clipboard (replaces nvim-osc52: Neovim 0.10+ uses the desktop
+-- clipboard locally and OSC 52 automatically over SSH)
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "copy to system clipboard" })
+vim.keymap.set("n", "<leader>Y", [["+y_]], { desc = "copy current line into system clipboard" })
+
+-- undo tree: Neovim 0.12's built-in nvim.undotree (replaces mbbill/undotree),
+-- loaded the first time it's opened. Press again to close.
+vim.keymap.set("n", "<leader>u", function()
+  vim.cmd.packadd("nvim.undotree")
+  require("undotree").open()
+end, { desc = "toggle undotree view" })

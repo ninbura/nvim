@@ -1,19 +1,10 @@
--- local width = math.min(vim.api.nvim_get_option("columns"), 240)
---
--- local bufnr, winnr = vim.lsp.util.open_floating_preview(
---   { "Your plain text here" },
---   "",
---   { border = "rounded", max_width = width }
--- )
-
--- set leader key
+-- leader keys (set before lazy.nvim loads so plugin mappings use them)
 vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
 -- enable line numbers and set relative
 vim.opt.nu = true
 vim.opt.relativenumber = true
--- vim.opt.statuscolumn = "%-3{v:lnum} %-2{v:relnum} %=%s"
--- vim.api.nvim_create_autocmd("BufEnter", { callback = function() print(vim.bo.filetype) end })
 
 -- add window number to status line
 vim.opt.statusline = ' #%{winnr()}      %f %= %l,%c      %P '
@@ -56,7 +47,7 @@ vim.opt.guicursor = {
 }
 
 -- set default terminal to powershell 7 if computer is running windows
-if(vim.loop.os_uname().sysname == "Windows_NT")
+if(vim.uv.os_uname().sysname == "Windows_NT")
   then
     vim.opt.shell = vim.fn.executable "pwsh" == 1 and "pwsh" or "powershell"
     vim.opt.shellcmdflag = "-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues[''Out-File:Encoding'']=''utf8'';Remove-Alias -Force -ErrorAction SilentlyContinue tee;"
@@ -64,6 +55,4 @@ if(vim.loop.os_uname().sysname == "Windows_NT")
     vim.opt.shellpipe = "2>&1 | %%{ '$_' } | tee %s; exit $LastExitCode"
     vim.opt.shellquote = ""
     vim.opt.shellxquote = ""
-
-    -- vim.g.undotree_DiffCommand = "VBinDiff.exe"
   end

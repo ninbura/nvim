@@ -1,6 +1,5 @@
 return {
   "nvim-telescope/telescope.nvim",
-  tag = "0.1.5",
   dependencies = { "nvim-lua/plenary.nvim" },
   opts = {
     defaults = {
@@ -9,13 +8,6 @@ return {
       }
     }
   },
-  config = function (_, opts)
-    require("telescope").setup(opts)
-
-    vim.api.nvim_create_autocmd("User", { pattern = "TelescopeFindPre", callback = function()
-      Write_To_Focused_Position_File("center")
-    end })
-  end,
   keys = {
     {
       "<leader>ff",
