@@ -223,7 +223,29 @@
           mv ~/.local/share/nvim ~/.local/share/nvim.omarchy-default.bak
           ```
 3. #### git clone this repository into the relevant location
-    - see the [Ubuntu Setup](#ubuntu-setup) clone step; the commands are identical
+    - as the primary configuration
+        - https
+            - ```Bash
+              git clone https://github.com/ninbura/nvim ~/.config/nvim
+              ```
+        - ssh
+            - ```Bash
+              git clone git@github.com:ninbura/nvim.git ~/.config/nvim
+              ```
+        - for me !!!
+            - ```Bash
+              git clone git@github.com:ninbura/nvim.git ~/.config/nvim --config user.name=ninbura --config user.email="58058942+ninbura@users.noreply.github.com"
+              ```
+    - as an additional configuration
+        - see [Changing Configurations](#changing-configurations)
+        - https
+            - ```Bash
+              git clone https://github.com/ninbura/nvim ~/.config/ninvim
+              ```
+        - ssh
+            - ```Bash
+              git clone git@github.com:ninbura/nvim.git ~/.config/ninvim --config user.name=ninbura --config user.email="58058942+ninbura@users.noreply.github.com"
+              ```
 4. #### Open neovim, wait for lazy to install plugins, & quit.
     - ```Bash
       nvim
