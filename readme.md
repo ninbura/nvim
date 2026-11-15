@@ -1,12 +1,12 @@
-# table of contents
-- [macOS setup](#macOS-setup)
-- [Linux setup](#Linux-setup)
-- [Omarchy setup](#Omarchy-setup)
-- [Windows setup](#Windows-setup)
-- [changing configurations](#changing-configurations)
-- [update/restore configuration](#updaterestore-configuration)
+# Table of Contents
+- [macOS Setup](#macos-setup)
+- [Ubuntu Setup](#ubuntu-setup)
+- [Omarchy Setup](#omarchy-setup)
+- [Windows Setup](#windows-setup)
+- [Changing Configurations](#changing-configurations)
+- [Update/Restore Configuration](#updaterestore-configuration)
 
-# macOS setup
+# macOS Setup
 ### notes
 - Requires Neovim 0.12 or newer.
 - Neovim's config directory
@@ -62,7 +62,7 @@
               git clone git@github.com:ninbura/nvim.git ~/.config/nvim --config user.name=ninbura --config user.email="58058942+ninbura@users.noreply.github.com"
               ```
     - as an additional configuration
-        - see [changing configurations](#changing-configurations)
+        - see [Changing Configurations](#changing-configurations)
         - https
             - ```Zsh
               git clone https://github.com/ninbura/nvim ~/.config/ninvim
@@ -80,7 +80,7 @@
     - ```Zsh
       :qa
       ```
-# Linux setup
+# Ubuntu Setup
 ### notes
 - Requires Neovim 0.12 or newer.
 - These instructions are structured around Ubuntu, they will vary depending on your choice of Linux distribution.
@@ -178,7 +178,7 @@
               git clone git@github.com:ninbura/nvim.git ~/.config/nvim --config user.name=ninbura --config user.email="58058942+ninbura@users.noreply.github.com"
               ```
     - as an additional configuration
-        - see [changing configurations](#changing-configurations)
+        - see [Changing Configurations](#changing-configurations)
         - https
             - ```Bash
               git clone https://github.com/ninbura/nvim ~/.config/ninvim
@@ -196,7 +196,7 @@
     - ```Bash
       :qa
       ```
-# Omarchy setup
+# Omarchy Setup
 ### notes
 - Requires Neovim 0.12 or newer.
 - [Omarchy](https://omarchy.org) is Arch Linux based and already ships most of what this config needs: Neovim (latest, via `pacman`), `git`, `curl`, `zip`, `ripgrep`, `fd`, `gcc`, the tree-sitter CLI, and Node.js + npm (managed by `mise`, so `nvm` isn't needed).
@@ -223,7 +223,7 @@
           mv ~/.local/share/nvim ~/.local/share/nvim.omarchy-default.bak
           ```
 3. #### git clone this repository into the relevant location
-    - see the [Linux setup](#Linux-setup) clone step; the commands are identical
+    - see the [Ubuntu Setup](#ubuntu-setup) clone step; the commands are identical
 4. #### Open neovim, wait for lazy to install plugins, & quit.
     - ```Bash
       nvim
@@ -298,7 +298,7 @@
               git clone git@github.com:ninbura/nvim.git $HOME/AppData/Local/nvim --config user.name=ninbura --config user.email="58058942+ninbura@users.noreply.github.com"
               ```
     - ##### as an additional configuration
-        - see [changing configurations](#changing-configurations)
+        - see [Changing Configurations](#changing-configurations)
         - https
             - ```PowerShell
               git clone https://github.com/ninbura/nvim $HOME/AppData/Local/ninvim
@@ -316,7 +316,7 @@
     - ```
       :qa
       ```
-# changing configurations
+# Changing Configurations
 - ### notes
     - To change configurations on the fly, simply rename you your nvim configuration folder & set the `NVIM_APPNAME` environment variable accordingly.
     - If you followed [as an additional configuration](#as-an-additional-configuration) under [git clone this repository](#git-clone-this-repository) in the setup instructions; you cloned the repository into a folder named `ninvim` instead of `nvim`.
@@ -348,7 +348,7 @@
               [System.Environment]::SetEnvironmentVariable("NVIM_APPNAME", $nvimAppName, "Machine")
               $env:NVIM_APPNAME = $nvimAppName
               ```
-# update/restore configuration
+# Update/Restore Configuration
 - ### notes
     - sometimes after updating you'll have cached configuration files that break plugins and such
     - restore = deleting the data folder
