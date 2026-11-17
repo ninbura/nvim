@@ -28,21 +28,17 @@
       brew install neovim ripgrep nvm go tree-sitter-cli
       ```
 4. #### configure nvm
-    - ```Zsh
-      mkdir ~/.nvm && touch ~/.zprofile
-      ```
-    - add the following entries to `~/.zprofile`
+    - add nvm to `~/.zprofile` (skipped if it's already there) & load it into the current session
         - ```Zsh
-          nano ~/.zprofile
-          ```
-        - ```Zsh
-          export NVM_DIR="$HOME/.nvm"
+          mkdir -p ~/.nvm
+
+          nvm_init='export NVM_DIR="$HOME/.nvm"
           [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-          [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+          [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"'
+
+          grep -qF '/opt/homebrew/opt/nvm/nvm.sh' ~/.zprofile 2>/dev/null || printf '\n%s\n' "$nvm_init" >> ~/.zprofile
+          eval "$nvm_init"
           ```
-    - ```Zsh
-      source ~/.zprofile
-      ```
     - ```Zsh
       nvm install --lts
       nvm use --lts
@@ -97,7 +93,7 @@
     - ```Bash
       mkdir ~/.config
       ```
-3. #### install Neovim & configuration dependencies
+2. #### install Neovim & configuration dependencies
     - ```Bash
       sudo apt install git curl llvm clang zip fuse ripgrep -y
       ```
@@ -144,26 +140,28 @@
           sudo rm -rf /opt/nvim
           sudo tar -C /opt -xzf "$file" --one-top-level=nvim --strip-components=1
           ```
-    2. add the binary to your path
-        - run the following command to open your `~/.profile` for editing
-            - ```Bash
-              nano ~/.profile
-              ```
-        - append the following to the bottom of the file
-            - ```Bash
-              export PATH="/opt/nvim/bin:$PATH"
-              ```
-        - Hit `ctrl+x` to exit, hit `y` to confirm you want to save changes, and then `enter` to save over the existing file.
+    2. add the binary to your `PATH` in `~/.profile` (skipped if it's already there) & in the current session
+        - ```Bash
+          path_line='export PATH="/opt/nvim/bin:$PATH"'
+
+          grep -qxF "$path_line" ~/.profile 2>/dev/null || echo "$path_line" >> ~/.profile
+          eval "$path_line"
+          ```
+        - Terminal windows you open later get this once you log out and back in.
+        - Bash skips `~/.profile` when `~/.bash_profile` or `~/.bash_login` exists, which is common on servers you SSH into. If you have either file, put the line there instead.
 4. #### install nvm
     - install **nvm** via [these instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
-5. #### restart your computer
-   - You could techincally get away with sourcing your `~/.profile` but that consistently caused an issue for me on Ubuntu where my desktop environment would get uinstalled... so I restart.
-6. #### configure nvm
+    - load nvm into the current session (the installer has already added it to `~/.bashrc` for future sessions)
+        - ```Bash
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          ```
+5. #### configure nvm
     - ```Bash
       nvm install --lts
       nvm use --lts
       ```
-7. #### git clone this repository into the relevant location
+6. #### git clone this repository into the relevant location
     - as the primary configuration
         - https
             - ```Bash
@@ -187,7 +185,7 @@
             - ```Bash
               git clone git@github.com:ninbura/nvim.git ~/.config/ninvim --config user.name=ninbura --config user.email="58058942+ninbura@users.noreply.github.com"
               ```
-8. #### Open neovim, wait for lazy to install plugins, & quit.
+7. #### Open neovim, wait for lazy to install plugins, & quit.
     - ```Bash
       nvim
       ```
@@ -344,28 +342,34 @@
     - If you followed [as an additional configuration](#as-an-additional-configuration) under [git clone this repository](#git-clone-this-repository) in the setup instructions; you cloned the repository into a folder named `ninvim` instead of `nvim`.
 - ### setting the `NVIM_APPNAME` environment variable
     - #### macOS & linux
-        - Running the following command in your terminal will change your Neovim configuration for your current session (ephemeral). Adding the following command to your profile will change your configuration for all sessions at login (persistent).
-        - ```bash
-          export NVIM_APPNAME=ninvim
-          ```
-        - profile locations
+        - ephemeral (current session only)
+            - ```bash
+              export NVIM_APPNAME=ninvim
+              ```
+        - persistent (adds it to your profile, skipped if it's already there, & applies it to the current session)
             - macOS
                 - ```Zsh
-                  ~/.zprofile
+                  appname_line='export NVIM_APPNAME=ninvim'
+
+                  grep -qxF "$appname_line" ~/.zprofile 2>/dev/null || echo "$appname_line" >> ~/.zprofile
+                  eval "$appname_line"
                   ```
             - Linux
                 - ```Bash
-                  ~/.profile
-                  ``` 
+                  appname_line='export NVIM_APPNAME=ninvim'
+
+                  grep -qxF "$appname_line" ~/.profile 2>/dev/null || echo "$appname_line" >> ~/.profile
+                  eval "$appname_line"
+                  ```
     - #### Windows
         - ephemeral
             - ```PowerShell
-              $env:NVIM_APPNAME = ninvim
+              $env:NVIM_APPNAME = "ninvim"
               ```
         - persistent 
             - ```PowerShell
               # persistent
-              $nvimAppName = ninvim
+              $nvimAppName = "ninvim"
               
               [System.Environment]::SetEnvironmentVariable("NVIM_APPNAME", $nvimAppName, "Machine")
               $env:NVIM_APPNAME = $nvimAppName
